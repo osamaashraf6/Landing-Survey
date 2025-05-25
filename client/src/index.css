@@ -5,3 +5,18 @@
 body{
     font-family: "Inter", sans-serif;
 }
+
+/* .poppins {
+    font-family: "Poppins", sans-serif;
+} */
+
+@theme {
+    --color-secondary: #07D8DD;
+    --color-primryBtn: #00B7C1;
+    }
+
+
+ @theme {
+     --font-poppins: "Poppins",
+        sans-serif;
+    }
