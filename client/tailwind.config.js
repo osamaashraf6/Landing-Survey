@@ -6,11 +6,21 @@ export default {
   ],
   theme: {
     extend: {
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1rem', 
+          sm: '2rem',
+          lg: '4rem',
+          xl: '2.5rem',
+          '2xl': '6rem',
+        },
+      },
       fontFamily: {
-        
-        inter: ["Inter", "sans-serif"],
-        poppins: ["Poppins", "sans-serif"],
-        
+        sans: ['Poppins', 'sans-serif'], // Set Poppins as the default font
+        "poppins": ["Poppins", "sans-serif"],
+        "inter": ["Inter", "sans-serif"],
+        "roboto": ["Roboto", "sans-serif"],
       },
     },
   },
