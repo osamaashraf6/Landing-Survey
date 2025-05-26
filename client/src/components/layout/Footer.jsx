@@ -21,11 +21,11 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Stay informed by entering your email"
-                className="flex-1 px-4 py-1.5 border placeholder:text-xs bg-gray-100 border-gray-300 rounded-l-md focus:ring-2 focus:ring-primary focus:border-primary outline-none"
+                className="flex-1 w-full px-4 py-1.5 border placeholder:text-xs bg-gray-100 border-gray-300 rounded-l-md focus:ring-2 focus:ring-primary focus:border-primary outline-none"
               />
               <button
                 type="submit"
-                className="px-5 py-2 bg-primary text-white rounded-r-md hover:bg-opacity-90"
+                className="px-5 py-2  bg-primary text-white rounded-r-md hover:bg-opacity-90"
               >
                 Enter
               </button>

@@ -6,7 +6,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className=" sticky top-0 z-30 bg-white shadow-md py-1.5">
+      <header className=" sticky top-0 z-30 bg-white shadow-md py-1.5 w-full">
         <div className="container">
           <div className="parnav flex justify-between items-center py-2">
             <div className="brand xl:w-[35%] w-full flex items-center justify-between">
@@ -45,7 +45,7 @@ const Navbar = () => {
                 </li>
               </ul>
             </nav>
-            <ul className="md:flex hidden items-center gap-4">
+            <ul className="xl:flex hidden items-center gap-4">
               <li>
                 <Link to="signin">Login</Link>
               </li>
@@ -62,7 +62,7 @@ const Navbar = () => {
             <nav
               className={`${
                 open ? "right-0 " : "right-[-350px]"
-              } navigation fixed top-0 w-[310px] p-4 h-screen back z-50 bg-white/30 backdrop-blur-sm transition-all duration-500 ease-in-out`}
+              } navigation xl:hidden fixed top-0 w-[310px] p-4 h-screen back z-50 bg-white/30 backdrop-blur-sm transition-all duration-500 ease-in-out`}
             >
               <div className="flex items-center justify-between mb-16">
                 <Link
