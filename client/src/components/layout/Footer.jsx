@@ -36,32 +36,57 @@ const Footer = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:text-left text-center justify-items-center ">
             <div className="space-y-2">
-              <a href="#" className="block text-sm hover:underline">
+              <h3 className="text-sm font-semibold">Pages</h3>
+              <a
+                href="#"
+                className="block text-sm hover:text-primary transition delay-150 ease-in-out"
+              >
                 Home
               </a>
-              <a href="#" className="block text-sm hover:underline">
+              <a
+                href="#"
+                className="block text-sm hover:text-primary transition delay-150 ease-in-out"
+              >
                 Templates
               </a>
-              <a href="#" className="block text-sm hover:underline">
+              <a
+                href="#"
+                className="block text-sm hover:text-primary transition delay-150 ease-in-out"
+              >
                 Pricing
               </a>
-              <a href="#" className="block text-sm hover:underline">
+              <a
+                href="#"
+                className="block text-sm hover:text-primary transition delay-150 ease-in-out"
+              >
                 Integrations
               </a>
             </div>
 
             <div className="space-y-2">
               <h3 className="text-sm font-semibold">Help Center</h3>
-              <a href="#" className="block text-sm hover:underline">
+              <a
+                href="#"
+                className="block text-sm hover:text-primary transition delay-150 ease-in-out"
+              >
                 Terms of Service
               </a>
-              <a href="#" className="block text-sm hover:underline">
+              <a
+                href="#"
+                className="block text-sm hover:text-primary transition delay-150 ease-in-out"
+              >
                 Privacy Policy
               </a>
-              <a href="#" className="block text-sm hover:underline">
+              <a
+                href="#"
+                className="block text-sm hover:text-primary transition delay-150 ease-in-out"
+              >
                 Refund Policy
               </a>
-              <a href="#" className="block text-sm hover:underline">
+              <a
+                href="#"
+                className="block text-sm hover:text-primary transition delay-150 ease-in-out"
+              >
                 FAQs
               </a>
             </div>

@@ -29,19 +29,19 @@ const Navbar = () => {
             <nav className="xl:flex hidden navigation w-[65%] items-center justify-between">
               <ul className="flex items-center gap-10">
                 <li>
-                  <NavLink to="/">Home</NavLink>
+                  <NavLink className="hover:text-primary transition delay-150 ease-in-out" to="/">Home</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/about">About Us</NavLink>
+                  <NavLink className="hover:text-primary transition delay-150 ease-in-out" to="/about">About Us</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/contact">Contact Us</NavLink>
+                  <NavLink className="hover:text-primary transition delay-150 ease-in-out" to="/contact">Contact Us</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/faqs">FAQs</NavLink>
+                  <NavLink className="hover:text-primary transition delay-150 ease-in-out" to="/faqs">FAQs</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/pricing">Pricing</NavLink>
+                  <NavLink className="hover:text-primary transition delay-150 ease-in-out" to="/pricing">Pricing</NavLink>
                 </li>
               </ul>
             </nav>
