@@ -14,7 +14,7 @@ export default function CardCommon({ items }) {
             {items?.map((item, i) => (
                 <Card
                     key={i}
-                    className="w-[300px] h-[470px] border-0 shadow-lg py-6 flex-shrink-0 flex flex-col justify-around "
+                    className="w-[300px] h-[470px] border-0 shadow-lg py-6 flex-shrink-0 flex flex-col  justify-around "
                 >
                     <CardHeader className="text-center">
                     {item.img && (

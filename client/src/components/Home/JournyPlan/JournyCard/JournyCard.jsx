@@ -15,7 +15,7 @@ export default function JournyCard({ items }) {
             {items?.map((item, i) => (
                 <Card
                     key={i}
-                    className={`w-[280px] h-[312px] flex-shrink-0 flex flex-col justify-between   ms-10 py-6 px-6
+                    className={`w-[280px] h-[312px] flex-shrink-0 flex flex-col justify-between mb-10 lg:mb-0  ms-10 py-6 px-6
                         ${item.highlight
                             ? "bg-[#E6FAFC] shadow-xl -mt-6 scale-105 z-10"
                             : "bg-white shadow-lg"
