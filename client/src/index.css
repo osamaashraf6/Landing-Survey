@@ -10,6 +10,11 @@ body{
     font-family: "Poppins", sans-serif;
 } */
 
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
 @theme {
     --color-secondary: #07D8DD;
     --color-primryBtn: #00B7C1;
@@ -18,5 +23,7 @@ body{
 
  @theme {
      --font-poppins: "Poppins",
+        sans-serif;
+     --font-inter: "Inter",
         sans-serif;
     }
