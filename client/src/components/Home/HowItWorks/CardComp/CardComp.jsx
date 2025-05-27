@@ -1,35 +1,21 @@
 import {
     Card,
     CardContent,
-    CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-  
+
+import {cardData} from '@/utils/data'
 export default function CardComp() {
 
-    const cardData = [
-        {
-            title: 'Create Your Survey',
-            content:'Choose a template or start from scratch using our easy-to-use builder'
-        },
-        {
-            title: 'Share With Your Audience',
-            content:'Send your survey via email, social media, or embed it in your website'
-        },
-        {
-            title: 'Analyze Responses',
-            content:'Get instant insights with clean charts and downloadable reports'
-        },
-    ]
+
     return <>
         
         {cardData.map((card, i) => (
             
             <Card
                 key={i}
-                className="rounded-xl border-0 py-10 px-8 shadow-lg gap-3 transition-transform duration-300 hover:translate-y-2"
+                className="  rounded-xl border-0 py-10 px-8 [box-shadow:0_4px_16px_#00000814]  gap-3 transition-transform duration-300 hover:translate-y-2"
             >
             <CardHeader>
                     <CardTitle className={``}>

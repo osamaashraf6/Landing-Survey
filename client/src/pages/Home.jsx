@@ -6,9 +6,12 @@ import Templets from "@/components/Home/Templets/Templets";
 const Home = () => {
   return <>
     <Hero />
-    <HowItWorks />
-    <Templets />
-    <JournyPlan/>
+    <section className="bg-gray-50 py-12">
+      <HowItWorks />
+      <Templets />
+      <JournyPlan/>
+
+    </section>
   </>;
 };
 

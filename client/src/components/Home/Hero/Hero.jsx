@@ -7,7 +7,7 @@ export default function Hero() {
     return (
         <section className="h-screen flex items-center justify-cente mt-40 md:mt-0">
             <div className=" container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-6 items-center  gap-8  md:gap-40 lg:gap-8 ">
+                <div className="grid grid-cols-1 md:grid-cols-6 items-center  gap-8  md:gap-4 lg:gap-8 ">
 
                     {/* Left Content */}
                     <div className="col-span-3 text-center   md:text-start ">
@@ -19,22 +19,22 @@ export default function Hero() {
                             <p className="text-lg leading-8 md:text-sm md:leading-6 lg:text-lg text-gray-400 lg:leading-8 font-normal">
                                 Effortlessly build surveys that deliver the answers you need to grow, improve, and connect with your audience.
                             </p>
-                            <div className=' flex gap-3'>
+                            <div className=' flex gap-3 '>
 
                                 <Btn text='Create Your Survey' />
-                                <Button className={`bg-white border-2 border-primryBtn w-52 py-3 px-5 rounded-xl text-primryBtn font-bold leading-8 capitalize hover:bg-primryBtn hover:text-white `} >See How It Works</Button>
+                                <Button className={`bg-white border-2 border-primryBtn w-40 lg:w-52 py-3 px-5 rounded-xl text-primryBtn font-bold leading-8 capitalize hover:bg-primryBtn hover:text-white `} >See How It Works</Button>
                             </div>
                         </div>
 
                     </div>
 
                     {/* Right Image */}
-                    <div className="col-span-3  overflow-hidden">
-                        <div className=' w-full flex items-center justify-center'>
+                    <div className="col-span-3   ">
+                        <div className=' w-full flex items-center justify-center overflow-hidden'>
                             <img
                                 src={heroImg}
                                 alt="Hero"
-                                className=""
+                                className="max-w-full h-auto object-contain"
                             />
                         </div>
                     
