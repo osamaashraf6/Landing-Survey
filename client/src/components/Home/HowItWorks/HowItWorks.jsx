@@ -2,7 +2,7 @@ import CardComp from "./CardComp/CardComp";
 
 export default function HowItWorks() {
     return <>
-        <section className="mb-12 mt-50 md:mt-0">
+        <section className="mb-12 md:mt-0 ">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col items-center justify-center text-center">
 

@@ -5,7 +5,7 @@ import { Button } from '@/components/UI/button';
 
 export default function Hero() {
     return (
-        <section className="h-screen flex items-center justify-cente mt-40 md:mt-0">
+        <section className="min-h-screen flex items-center justify-cente py-4  md:mt-0  ">
             <div className=" container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-6 items-center  gap-8  md:gap-4 lg:gap-8 ">
 
@@ -37,8 +37,8 @@ export default function Hero() {
                                 className="max-w-full h-auto object-contain"
                             />
                         </div>
-                    
-                    </div>
+
+                    </div> 
 
                 </div>
             </div>
