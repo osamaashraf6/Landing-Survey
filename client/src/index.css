@@ -1,22 +1,32 @@
 @import "tailwindcss";
 
 body {
-  font-family: "Inter", sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 .poppins {
-  font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 .container {
-  width: 87%;
-  margin: 0 auto;
+    width: 87%;
+    margin: 0 auto;
 }
 
 .active {
-  color: #00b7c1;
+    color: #00b7c1;
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* Custom theme variables */
 @theme {
-  --color-primary: #00b7c1;
+    --color-secondary: #07D8DD;
+    --color-primary: #00b7c1;
+    --color-primryBtn: #00B7C1;
+
+    --font-poppins: "Poppins", sans-serif;
+    --font-inter: "Inter", sans-serif;
 }
