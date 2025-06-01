@@ -22,7 +22,7 @@ export default function Hero() {
                             <div className=' flex gap-3 '>
 
                                 <Btn text='Create Your Survey' />
-                                <Button className={`bg-white border-2 border-primryBtn w-40 lg:w-52 py-3 px-5 rounded-xl text-primryBtn font-bold leading-8 capitalize hover:bg-primryBtn hover:text-white `} >See How It Works</Button>
+                                <Button className={`bg-white border-2 border-primryBtn text-xs md:text-lg w-30 lg:w-52 py-3 px-5 rounded-xl text-primryBtn font-bold leading-8 capitalize transition-all  hover:bg-primryBtn hover:text-white `} >See How It Works</Button>
                             </div>
                         </div>
 

@@ -22,7 +22,7 @@ export default function JournyPlan() {
                         <JournyCard items={plan} />
 
                     </div>
-                    <Button className={`bg-primryBtn w-[350px] lg:w-[424px] py-3 px-6 rounded-xl text-white font-bold leading-8  hover:bg-secondary`} ><h5 className="font-popins font-semibold text-lg lg:text-xl">
+                    <Button className={`bg-primryBtn w-[250px]  lg:w-[424px] py-3 px-6 rounded-xl text-white font-bold leading-8  hover:bg-secondary`} ><h5 className="font-popins font-semibold text-sm lg:text-xl">
                         Not sure? See all pricing options
                     </h5></Button>
                 </div>
