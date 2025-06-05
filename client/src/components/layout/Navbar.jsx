@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import * as Icons from "../../assets/icons/Icons";
 const Navbar = () => {
+
   const [open, setOpen] = useState(false);
 
   return (

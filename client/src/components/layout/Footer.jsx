@@ -1,6 +1,7 @@
 import React from "react";
 import * as Icons from "../../assets/icons/Icons";
 const Footer = () => {
+
   return (
     <>
       <footer className="py-10 rounded-t-xl">
