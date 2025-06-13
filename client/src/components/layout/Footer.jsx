@@ -4,7 +4,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="py-10 rounded-t-xl">
+      <footer className="py-10 rounded-t-xl bg-white">
         <div className="container">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-8 lg:space-y-0">
             <div>
