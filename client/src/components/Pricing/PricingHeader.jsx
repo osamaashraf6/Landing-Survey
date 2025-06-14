@@ -18,7 +18,7 @@ function pricingHeader() {
             <Button onClick={() => setBillingCycle("monthly")}
             className={`w-[130px] text-white  capitalize h-[45px] rounded-3xl cursor-pointer
 
-                ${billingCycle === "monthly" ? 'bg-[#00B7C1] text-white' : "bg-white text-black"
+                ${billingCycle === "monthly" ? 'bg-[#00B7C1] text-white' : "bg-white text-black hover:!bg-white hover:!text-black"
                 }`}
             >
                 Monthly
@@ -27,7 +27,7 @@ function pricingHeader() {
                    <Button onClick={() => setBillingCycle("yearly")}
             className={`w-[130px] text-white  capitalize h-[45px] rounded-3xl   cursor-pointer
 
-                ${billingCycle === "yearly" ? 'bg-[#00B7C1] text-white ' : "bg-white text-black"
+                ${billingCycle === "yearly" ? 'bg-[#00B7C1] text-white ' : "bg-white text-black hover:!bg-white hover:!text-black"
                 }`}
             >
                 yearly

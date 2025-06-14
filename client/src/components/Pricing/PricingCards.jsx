@@ -3,12 +3,11 @@ import plans from './Plans';
 import { Button } from '@/components/UI/button';
 import { HiCheck } from "react-icons/hi";
 
-
 function PricingCards() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-[120px] ">
        {plans.map((plan, index)=>(
-        <div key={index} className={` px-[40px] py-[40px] text-black rounded-2xl shadow-[3px_3px_10px_1px_#a0aec0,0px_3px_8px_0px_#00000024] ${plan.highlighted ? "bg-[#00B7C1] text-white  md:-translate-y-15" : "bg-white text-black"}`}>
+        <div key={index} className={` px-[40px] py-[40px] text-black rounded-2xl   shadow-[8px_8px_10px_8px_#e2e8f0] ${plan.highlighted ? "bg-[#00B7C1] text-white  md:-translate-y-15" : "bg-white text-black"}`}>
          <h1 className="font-bold text-[25px] mb-[25px]">{plan.title}</h1>
          <p className={`text-gray-500 mb-[30px] ${plan.highlighted ? "  text-white " : "text-[#00B7C1]" }`}>{plan.description}</p>
          <p className=" font-bold text-[45px] ">{`$${plan.price} `} <span className={`text-gray-500 font-normal text-[20px] ${plan.highlighted ? "  text-white " : "text-[#00B7C1]" }`}>/monthly</span></p>
