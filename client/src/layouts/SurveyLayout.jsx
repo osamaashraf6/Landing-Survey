@@ -9,8 +9,8 @@ const SurveyLayout = () => {
     <div className="bg-[#f9f9fb]">
       <Navbar />
       <SurveyHeader />
-      <section className="bigsection">
-        <div className="asides  flex items-center">
+      <section className="">
+        <div className="asides  flex ">
           <div className="asideleft border w-[365px]">
             <SurveySidebar />
           </div>
