@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className=" sticky top-0 z-30 bg-white shadow-md py-1.5 w-full">
+      <header className=" sticky top-0 z-30 bg-white shadow py-1.5 w-full">
         <div className="container">
           <div className="parnav flex justify-between items-center py-2">
             <div className="brand xl:w-[35%] w-full flex items-center justify-between">
