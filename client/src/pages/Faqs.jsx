@@ -65,7 +65,7 @@ const Faqs = () => {
         and create fillable PDF forms. You can put together all types of forms, including:
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-        {forms.map((form, index) => (
+        {formTypes.map((form, index) => (
           <button
             key={index}
             className="flex items-center gap-2 bg-cyan-100 text-cyan-700 px-4 py-2 rounded-md shadow-sm hover:bg-cyan-200 transition"
