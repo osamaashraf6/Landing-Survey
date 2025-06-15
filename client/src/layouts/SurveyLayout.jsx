@@ -8,7 +8,7 @@ const SurveyLayout = ({children}) => {
   return (
     <div className="bg-[#f9f9fb]">
       <Navbar />
-      {/* <SurveyHeader /> */}
+      <SurveyHeader />
       <section className="">
 
         <SidebarProvider>
