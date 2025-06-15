@@ -40,7 +40,7 @@ const SurveySidebar = () => {
     },
   ]
   return <>
-    <Sidebar>
+    <Sidebar className="mt-17">
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Application</SidebarGroupLabel>
