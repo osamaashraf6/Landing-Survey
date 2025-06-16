@@ -4,6 +4,8 @@ import { HiBars3BottomRight } from "react-icons/hi2";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { HiCheck } from "react-icons/hi";
+import { IoIosArrowForward } from "react-icons/io";
+
 export {
   LiaTimesSolid,
   HiBars3BottomRight,
@@ -11,4 +13,5 @@ export {
   FaXTwitter,
   FaArrowRight,
   HiCheck,
+  IoIosArrowForward
 };
