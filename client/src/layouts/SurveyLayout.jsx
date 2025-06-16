@@ -12,7 +12,7 @@ const SurveyLayout = () => {
         <SurveyHeader />
         <SidebarProvider>
           <SurveySidebar />
-          <main>
+          <main className="w-full">
             <SidebarTrigger />
             <Outlet />
           </main>

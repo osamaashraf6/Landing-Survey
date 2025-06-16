@@ -1,0 +1,35 @@
+
+
+
+
+
+  // const [count, setCount] = useState(3);
+  // const items = Array.from({ length: count });
+
+
+
+
+
+
+
+       {/* {items.map((_, index) => (
+                    <div key={index} className="flex items-center gap-4">
+                      <span className="flex bg-[#eff0f3] h-[30px] w-[35px] rounded-full"></span>
+                      <input
+                        type="text"
+                        className="bg-[#eff0f3] pl-3 p-1.5 rounded border border-gray-300 text-sm w-full outline-0"
+                        placeholder="Enter an answer choice"
+                      />
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => setCount(count + 1)}
+                          className="rounded-full border border-[#eff0f3] h-[30px] w-[30px] flex items-center justify-center text-[#00B7C1] hover:bg-[#00B7C1] hover:text-white"
+                        >
+                          +
+                        </button>
+                        <button className="rounded-full border border-[#eff0f3] h-[30px] w-[30px] flex items-center justify-center text-[#00B7C1] hover:bg-[#00B7C1] hover:text-white">
+                          -
+                        </button>
+                      </div>
+                    </div>
+                  ))} */}
