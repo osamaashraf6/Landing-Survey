@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+html.light {
+  --bg-color: #ffffff;
+  --text-color: #332e2e;
+  
+}
+
+html.dark {
+  --bg-color: #292727;
+  --text-color: #ffffff;
+  
+}
+
 body {
     font-family: "Inter", sans-serif;
 }
