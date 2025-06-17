@@ -12,13 +12,11 @@ const SurveyLayout = () => {
         <SurveyHeader />
         <SidebarProvider>
           <div className="relative">
-
-          <SurveySidebar />
+            <SurveySidebar />
           </div>
-          <main>
+          <main className="w-full">
             <div className=" absolute top-21 right-2 lg:top-22 md:right-auto z-20 ">
-            <SidebarTrigger />
-
+              <SidebarTrigger />
             </div>
             <Outlet />
           </main>

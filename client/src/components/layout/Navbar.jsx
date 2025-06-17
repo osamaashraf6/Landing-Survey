@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import * as Icons from "../../assets/icons/Icons";
- 
+
 import DarkModeToggle from "../../features/DarkMode/DarkMode";
- 
+
 import {
   Select,
   SelectContent,
@@ -13,20 +13,16 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
- 
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const [mode, setMode] = useState("light");
   return (
     <>
-      <header className=" sticky top-0 z-30 bg-white shadow py-1.5 w-full">
+      <header className=" sticky top-0 z-30 bg-[#f9f9fb]   py-1.5 w-full">
         <div className="container">
           <div className="parnav flex justify-between items-center py-2">
             <div className="brand xl:w-[35%] w-full flex items-center justify-between">
-              <Link
-                to="/"
-                className="text-xl font-bold flex items-center gap-2"
-              >
+              <Link to="/" className="text-xl font-bold flex items-center gap-2">
                 <span className="text-primary">Survey</span>Land
               </Link>
               <div className="hamburger-control  ">
@@ -42,10 +38,7 @@ const Navbar = () => {
             <nav className="xl:flex hidden navigation w-[65%] items-center justify-between">
               <ul className="flex items-center gap-10">
                 <li>
-                  <NavLink
-                    className="hover:text-primary transition delay-150 ease-in-out"
-                    to="/"
-                  >
+                  <NavLink className="hover:text-primary transition delay-150 ease-in-out" to="/">
                     Home
                   </NavLink>
                 </li>
@@ -74,22 +67,8 @@ const Navbar = () => {
                     Pricing
                   </NavLink>
                 </li>
-                <li
-                  onClick={() => {
-                    setMode(mode === "dark" ? "light" : "dark");
-                  }}
-                  className="cursor-pointer rounded-4xl bg-[#00B7C1] w-11 h-6 flex justify-between items-center relative border-1 border-[#00B7C1]"
-                >
-                  <span>🌙</span>
-                  <span>☀️</span>
-                  <span
-                    className={` ${
-                      mode === "dark" ? "left-0  " : "left-[22px]  "
-                    } transition-all duration-300 ease-in-out top-[1.6px]  ball flex bg-white rounded-full w-5 h-5 absolute `}
-                  ></span>
-                </li>
               </ul>
-              <DarkModeToggle/>
+              <DarkModeToggle />
             </nav>
             <ul className="xl:flex hidden items-center gap-4">
               <li>
@@ -135,10 +114,7 @@ const Navbar = () => {
               } navigation xl:hidden fixed top-0 w-[310px] p-4 h-screen back z-50 bg-white/30 backdrop-blur-sm transition-all duration-500 ease-in-out`}
             >
               <div className="flex items-center justify-between mb-16">
-                <Link
-                  to="/"
-                  className="text-[34px] font-bold flex items-center gap-2"
-                >
+                <Link to="/" className="text-[34px] font-bold flex items-center gap-2">
                   <span className="text-primary">Survey</span>Land
                 </Link>
                 <button
@@ -166,10 +142,7 @@ const Navbar = () => {
                     <Link to="signin">Login</Link>
                   </li>
                   <li>
-                    <Link
-                      to="signup"
-                      className="bg-primary w-[120px] rounded-xl text-white p-2"
-                    >
+                    <Link to="signup" className="bg-primary w-[120px] rounded-xl text-white p-2">
                       Sign Up
                     </Link>
                   </li>
