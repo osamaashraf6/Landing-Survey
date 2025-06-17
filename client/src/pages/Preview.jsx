@@ -6,14 +6,12 @@ const Preview = () => {
   const questions = [
     {
       id: 1,
-      question:
-        "What did you like most about the physics course or the instructor?",
+      question: "What did you like most about the physics course or the instructor?",
       type: "text",
     },
     {
       id: 2,
-      question:
-        "What did you like most about the physics course or the instructor?",
+      question: "What did you like most about the physics course or the instructor?",
       type: "text",
     },
     {
@@ -33,7 +31,7 @@ const Preview = () => {
     <>
       <section className="px-10 py-14 flex flex-col gap-5 w-full md:w-[70%]">
         <h2 className="text-xl">Add question type Text Area (Comment Box)</h2>
-        <Button className="bg-white border w-fit border-[#00B7C1] hover:text-white cursor-pointer">
+        <Button className="bg-white border text-[#00B7C1] w-fit border-[#00B7C1] hover:text-white cursor-pointer">
           <img src={logoPrev} className="w-8" /> Add Logo
         </Button>
         <div className="rounded-md py-2 px-5 bg-white text-[#00B7C1] font-semibold text-lg">
@@ -63,9 +61,7 @@ const Preview = () => {
           ))}
         </div>
         <div className="flex gap-3 items-center">
-          <Button className=" w-[150px] text-white   cursor-pointer">
-            Done
-          </Button>
+          <Button className=" w-[150px] text-white   cursor-pointer">Done</Button>
           <Button className=" w-[150px] text-white bg-[#FFA630] hover:bg-[#ffa530dd]  cursor-pointer">
             Send Survey
           </Button>
