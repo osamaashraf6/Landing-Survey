@@ -326,4 +326,4 @@ and publish forms, integrate them into your site, and receive responses by email
   },
 ];
  */
-export { cardData, cardDetails, plan, plans ,formTypes , faqs};
+export { cardData, cardDetails, plan, plans ,formTypes};

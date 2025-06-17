@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import * as Icons from "../../assets/icons/Icons";
+import DarkModeToggle from "../../features/DarkMode/DarkMode";
 const Navbar = () => {
 
   const [open, setOpen] = useState(false);
@@ -45,6 +46,7 @@ const Navbar = () => {
                   <NavLink className="hover:text-primary transition delay-150 ease-in-out" to="/pricing">Pricing</NavLink>
                 </li>
               </ul>
+              <DarkModeToggle/>
             </nav>
             <ul className="xl:flex hidden items-center gap-4">
               <li>
