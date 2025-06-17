@@ -1,5 +1,6 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import userReducer from "./userslice/userSlice";
+import LanguageSlice from "./slices/languageSlice";
 import {
   persistStore,
   persistReducer,
@@ -16,9 +17,10 @@ const persistConfig = {
   key: "root",
   version: 1,
   storage,
+  blacklist: ["language"],
 };
 
-const rootReducer = combineReducers({ user: userReducer });
+const rootReducer = combineReducers({ user: userReducer , language: LanguageSlice });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
