@@ -40,7 +40,7 @@ const SignIn = () => {
             <div className="text-center text-sm text-gray-600 mb-6">
               Or register using your email address
             </div>
-            <div className="text-center mb-6 sm:block md:hidden">
+            <div className="text-center mb-6 block sm:hidden">
               <AuthDontHaveAccount />
             </div>
             <form onSubmit={handleSubmit} className="text-center">
