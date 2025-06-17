@@ -1,4 +1,5 @@
 import * as Img from "@/assets/images/Images";
+import * as Icon from "@/assets/icons/Icons"; // ✅ Correct path to icon components
 
 const cardData = [
   {
@@ -253,4 +254,22 @@ const plans = [
   },
 ];
 
-export { cardData, cardDetails, plan, plans };
+
+ const items = [
+    {
+      title: "drafts",
+      url: "#",
+      icon: Icon.MdEditSquare,
+    },
+    {
+      title: "archive",
+      url: "#",
+      icon: Icon.IoMdArchive,
+    },
+    {
+      title: "trash",
+      url: "#",
+      icon: Icon.HiTrash,
+    },
+  ];
+export { cardData, cardDetails, plan, plans, items };
