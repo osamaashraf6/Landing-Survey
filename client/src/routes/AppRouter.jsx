@@ -24,6 +24,8 @@ const ResetPassword = lazy(() => import("../pages/ResetPassword")); //
 const SignIn = lazy(() => import("../pages/SignIn")); //
 const SignUp = lazy(() => import("../pages/SignUp")); //
 
+
+
 // routing config
 const router = createBrowserRouter([
   {

@@ -1,10 +1,22 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import * as Icons from "../../assets/icons/Icons";
+ 
+import DarkModeToggle from "../../features/DarkMode/DarkMode";
+ 
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+ 
 const Navbar = () => {
-
   const [open, setOpen] = useState(false);
-
+  const [mode, setMode] = useState("light");
   return (
     <>
       <header className=" sticky top-0 z-30 bg-white shadow py-1.5 w-full">
@@ -30,23 +42,80 @@ const Navbar = () => {
             <nav className="xl:flex hidden navigation w-[65%] items-center justify-between">
               <ul className="flex items-center gap-10">
                 <li>
-                  <NavLink className="hover:text-primary transition delay-150 ease-in-out" to="/">Home</NavLink>
+                  <NavLink
+                    className="hover:text-primary transition delay-150 ease-in-out"
+                    to="/"
+                  >
+                    Home
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink className="hover:text-primary transition delay-150 ease-in-out" to="/about">About Us</NavLink>
+                  <NavLink
+                    className="hover:text-primary transition delay-150 ease-in-out"
+                    to="/about"
+                  >
+                    About Us
+                  </NavLink>
+                </li>
+
+                <li>
+                  <NavLink
+                    className="hover:text-primary transition delay-150 ease-in-out"
+                    to="/faqs"
+                  >
+                    FAQs
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink className="hover:text-primary transition delay-150 ease-in-out" to="/contact">Contact Us</NavLink>
+                  <NavLink
+                    className="hover:text-primary transition delay-150 ease-in-out"
+                    to="/pricing"
+                  >
+                    Pricing
+                  </NavLink>
                 </li>
-                <li>
-                  <NavLink className="hover:text-primary transition delay-150 ease-in-out" to="/faqs">FAQs</NavLink>
-                </li>
-                <li>
-                  <NavLink className="hover:text-primary transition delay-150 ease-in-out" to="/pricing">Pricing</NavLink>
+                <li
+                  onClick={() => {
+                    setMode(mode === "dark" ? "light" : "dark");
+                  }}
+                  className="cursor-pointer rounded-4xl bg-[#00B7C1] w-11 h-6 flex justify-between items-center relative border-1 border-[#00B7C1]"
+                >
+                  <span>🌙</span>
+                  <span>☀️</span>
+                  <span
+                    className={` ${
+                      mode === "dark" ? "left-0  " : "left-[22px]  "
+                    } transition-all duration-300 ease-in-out top-[1.6px]  ball flex bg-white rounded-full w-5 h-5 absolute `}
+                  ></span>
                 </li>
               </ul>
+              <DarkModeToggle/>
             </nav>
             <ul className="xl:flex hidden items-center gap-4">
+              <li>
+                <Select>
+                  <SelectTrigger className="w-[70px] text-[#FFA630] bg-white border border-[#FFA630] rounded-md">
+                    <SelectValue placeholder="EN" />
+                  </SelectTrigger>
+
+                  <SelectContent className="w-[56px] border border-[#FFA630] shadow-md bg-white">
+                    <SelectGroup>
+                      <SelectItem
+                        value="ar"
+                        className="  hover:bg-[#eeeeee] focus:bg-[#eeeeee] text-[#FFA630] px-2 py-1"
+                      >
+                        AR
+                      </SelectItem>
+                      <SelectItem
+                        value="en"
+                        className="  hover:bg-[#eeeeee] focus:bg-[#eeeeee] text-[#FFA630] px-2 py-1"
+                      >
+                        EN
+                      </SelectItem>
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
+              </li>
               <li>
                 <Link to="signin">Login</Link>
               </li>
