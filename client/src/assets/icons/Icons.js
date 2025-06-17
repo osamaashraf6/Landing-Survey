@@ -1,3 +1,4 @@
+import { FaArrowRight } from "react-icons/fa6";
 import { LiaTimesSolid } from "react-icons/lia";
 import { HiBars3BottomRight } from "react-icons/hi2";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -8,6 +9,8 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { MdEmail } from 'react-icons/md';
 import { RiLockPasswordLine } from 'react-icons/ri';
+import { HiCheck } from "react-icons/hi";
+import { IoIosArrowForward } from "react-icons/io";
 
 export { 
   LiaTimesSolid, 
@@ -19,5 +22,10 @@ export {
   FaEye,
   FaEyeSlash,
   MdEmail,
-  RiLockPasswordLine
+  RiLockPasswordLine,
+  FaArrowRight,
+  HiCheck,
+  IoIosArrowForward
 };
+
+

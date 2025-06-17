@@ -5,15 +5,17 @@ import LazyLoadingRoute from "../features/loading/LazyLoadingRoute";
 
 // layouts
 import MainLayout from "../layouts/MainLayout";
+import SurveyLayout from "../layouts/SurveyLayout";
 import AuthGuard from "../guards/AuthGuard";
 
 // pages
 const About = lazy(() => import("../pages/About"));
-const Contact = lazy(() => import("../pages/Contact"));
 const Dashboard = lazy(() => import("../pages/Dashboard"));
+const Preview = lazy(() => import("../pages/Preview"));
+const SurveyDetails = lazy(() => import("../pages/SurveyDetails")); //
+const SurveyUpsert = lazy(() => import("../pages/SurveyUpsert")); //
 const Faqs = lazy(() => import("../pages/Faqs"));
-const Features = lazy(() => import("../pages/Features"));
-const ForgetPassword = lazy(() => import("../pages/ForgetPassword")); //
+const ForgetPassword = lazy(() => import("../pages/ForgetPassword"));
 const Home = lazy(() => import("../pages/Home"));
 const Pricing = lazy(() => import("../pages/Pricing"));
 const Profile = lazy(() => import("../pages/Profile")); //
@@ -21,6 +23,8 @@ const ResetCode = lazy(() => import("../pages/ResetCode")); //
 const ResetPassword = lazy(() => import("../pages/ResetPassword")); //
 const SignIn = lazy(() => import("../pages/SignIn")); //
 const SignUp = lazy(() => import("../pages/SignUp")); //
+
+
 
 // routing config
 const router = createBrowserRouter([
@@ -45,26 +49,6 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
-
-      {
-        path: "contact",
-        element: (
-          <Suspense fallback={<LazyLoadingRoute />}>
-            <Contact />
-          </Suspense>
-        ),
-      },
-      //
-      {
-        path: "dashboard",
-        element: (
-          <AuthGuard>
-            <Suspense fallback={<LazyLoadingRoute />}>
-              <Dashboard />
-            </Suspense>
-          </AuthGuard>
-        ),
-      },
       {
         path: "faqs",
         element: (
@@ -73,14 +57,7 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
-      {
-        path: "Features",
-        element: (
-          <Suspense fallback={<LazyLoadingRoute />}>
-            <Features />
-          </Suspense>
-        ),
-      },
+
       {
         path: "pricing",
         element: (
@@ -91,6 +68,57 @@ const router = createBrowserRouter([
       },
     ],
   },
+
+  //========
+  {
+    path: "dashboard",
+    element: <SurveyLayout />,
+    errorElement: <Error />,
+    children: [
+      {
+        index: true,
+        element: (
+          <AuthGuard>
+            <Suspense fallback={<LazyLoadingRoute />}>
+              <Dashboard />
+            </Suspense>
+          </AuthGuard>
+        ),
+      },
+      {
+        path: "surveys/:surveyId",
+        element: (
+          <AuthGuard>
+            <Suspense fallback={<LazyLoadingRoute />}>
+              <SurveyDetails />
+            </Suspense>
+          </AuthGuard>
+        ),
+      },
+      {
+        path: "preview",
+        element: (
+          <AuthGuard>
+            <Suspense fallback={<LazyLoadingRoute />}>
+              <Preview />
+            </Suspense>
+          </AuthGuard>
+        ),
+      },
+      {
+        path: "surveyupsert",
+        element: (
+          <AuthGuard>
+            <Suspense fallback={<LazyLoadingRoute />}>
+              <SurveyUpsert />
+            </Suspense>
+          </AuthGuard>
+        ),
+      },
+    ],
+  },
+
+  //========
   {
     path: "forgetpassword",
     element: (
@@ -107,10 +135,7 @@ const router = createBrowserRouter([
       </Suspense>
     ),
   },
-  // {
-  //   path: "notfound",
-  //   element: <Suspense fallback={<LazyLoadingRoute />}></Suspense>  <NotFound />,
-  // },
+
   {
     path: "signup",
     element: (
