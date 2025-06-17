@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import * as Icons from "../../assets/icons/Icons";
+ 
+import DarkModeToggle from "../../features/DarkMode/DarkMode";
+ 
 import {
   Select,
   SelectContent,
@@ -10,6 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+ 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [mode, setMode] = useState("light");
@@ -85,6 +89,7 @@ const Navbar = () => {
                   ></span>
                 </li>
               </ul>
+              <DarkModeToggle/>
             </nav>
             <ul className="xl:flex hidden items-center gap-4">
               <li>
