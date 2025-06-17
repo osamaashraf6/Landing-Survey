@@ -13,9 +13,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useLanguage } from "@/hooks/useLanguage";
+import LanguageSwitcher from "../UI/language-selector";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const { t } = useLanguage();
+
   return (
     <>
       <header className=" sticky top-0 z-30 bg-[#f9f9fb]   py-1.5 w-full">
@@ -39,7 +43,7 @@ const Navbar = () => {
               <ul className="flex items-center gap-10">
                 <li>
                   <NavLink className="hover:text-primary transition delay-150 ease-in-out" to="/">
-                    Home
+                    {t('nav.home')}
                   </NavLink>
                 </li>
                 <li>
@@ -47,7 +51,7 @@ const Navbar = () => {
                     className="hover:text-primary transition delay-150 ease-in-out"
                     to="/about"
                   >
-                    About Us
+                    {t('nav.about')}
                   </NavLink>
                 </li>
 
@@ -56,7 +60,7 @@ const Navbar = () => {
                     className="hover:text-primary transition delay-150 ease-in-out"
                     to="/faqs"
                   >
-                    FAQs
+                    {t('nav.faqs')}
                   </NavLink>
                 </li>
                 <li>
@@ -64,7 +68,7 @@ const Navbar = () => {
                     className="hover:text-primary transition delay-150 ease-in-out"
                     to="/pricing"
                   >
-                    Pricing
+                    {t('nav.pricing')}
                   </NavLink>
                 </li>
               </ul>
@@ -72,38 +76,17 @@ const Navbar = () => {
             </nav>
             <ul className="xl:flex hidden items-center gap-4">
               <li>
-                <Select>
-                  <SelectTrigger className="w-[70px] text-[#FFA630] bg-white border border-[#FFA630] rounded-md">
-                    <SelectValue placeholder="EN" />
-                  </SelectTrigger>
-
-                  <SelectContent className="w-[56px] border border-[#FFA630] shadow-md bg-white">
-                    <SelectGroup>
-                      <SelectItem
-                        value="ar"
-                        className="  hover:bg-[#eeeeee] focus:bg-[#eeeeee] text-[#FFA630] px-2 py-1"
-                      >
-                        AR
-                      </SelectItem>
-                      <SelectItem
-                        value="en"
-                        className="  hover:bg-[#eeeeee] focus:bg-[#eeeeee] text-[#FFA630] px-2 py-1"
-                      >
-                        EN
-                      </SelectItem>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
+            <LanguageSwitcher />
               </li>
               <li>
-                <Link to="signin">Login</Link>
+                <Link to="signin">{t('nav.login')}</Link>
               </li>
               <li>
                 <Link
                   to="signup"
                   className="bg-primary block w-[120px] text-center rounded-xl text-white p-2"
                 >
-                  Sign Up
+                  {t('nav.signup')}
                 </Link>
               </li>
             </ul>
@@ -126,24 +109,26 @@ const Navbar = () => {
               </div>
               <ul className="">
                 <li className="py-4 border-y hover:text-primary">
-                  <Link to="">Home</Link>
+                  <Link to="">{t('nav.home')}</Link>
                 </li>
                 <li className="py-4 border-b hover:text-primary">
-                  <Link to="/about">About</Link>
+                  <Link to="/about">{t('nav.about')}</Link>
                 </li>
                 <li className="py-4 border-b hover:text-primary">
-                  <Link to="/contact">Contact</Link>
+                  <Link to="/contact">{t('nav.contact')}</Link>
                 </li>
                 <li className="py-4 border-b hover:text-primary">
-                  <Link to="">Features</Link>
+                  <Link to="">{t('nav.features')}</Link>
                 </li>
                 <ul className="flex mt-16 items-center gap-4">
                   <li>
-                    <Link to="signin">Login</Link>
+                    <Link to="signin">
+                    {t('nav.login')}
+                    </Link>
                   </li>
                   <li>
                     <Link to="signup" className="bg-primary w-[120px] rounded-xl text-white p-2">
-                      Sign Up
+                    {t('nav.signup')}
                     </Link>
                   </li>
                 </ul>
