@@ -16,7 +16,7 @@ const SurveyLayout = () => {
           <SurveySidebar />
           </div>
           <main>
-            <div className=" absolute top-21 right-2 lg:top-22 md:right-auto z-40 ">
+            <div className=" absolute top-21 right-2 lg:top-22 md:right-auto z-20 ">
             <SidebarTrigger />
 
             </div>
