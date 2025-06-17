@@ -35,16 +35,10 @@ const languageSlice = createSlice({
       const langCode = action.payload;
       if (languages[langCode]) {
         state.currentLanguage = langCode;
-        
-        // Update i18next language
         i18n.changeLanguage(langCode);
-        
-        // Update document direction and language
         const direction = languages[langCode].dir;
         document.documentElement.dir = direction;
         document.documentElement.lang = langCode;
-        
-        // Update body classes for RTL styling
         document.body.classList.remove('rtl', 'ltr');
         document.body.classList.add(direction);
       }
@@ -54,8 +48,6 @@ const languageSlice = createSlice({
       const langCode = action.payload || state.currentLanguage;
       state.currentLanguage = langCode;
       state.isInitialized = true;
-      
-      // Set initial document properties
       const direction = languages[langCode].dir;
       document.documentElement.dir = direction;
       document.documentElement.lang = langCode;

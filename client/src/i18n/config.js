@@ -22,8 +22,6 @@ i18n
     resources,
     fallbackLng: 'en',
     debug: true, //TODO: Set to true only in development
-    lng: 'en', 
-
     interpolation: {
       escapeValue: false, 
     },
