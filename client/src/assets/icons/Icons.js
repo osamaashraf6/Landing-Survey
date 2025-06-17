@@ -3,15 +3,46 @@ import { LiaTimesSolid } from "react-icons/lia";
 import { HiBars3BottomRight } from "react-icons/hi2";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
+import { MdEmail } from 'react-icons/md';
+import { RiLockPasswordLine } from 'react-icons/ri';
 import { HiCheck } from "react-icons/hi";
-import { IoIosArrowForward } from "react-icons/io";
+ 
+import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
+import { MdEditSquare } from "react-icons/md";
+import { IoMdArchive } from "react-icons/io";
+import { HiTrash } from "react-icons/hi2";
+import { FaCirclePlus } from "react-icons/fa6";
+import { MdOutlineLogout } from "react-icons/md";
+import { BsPersonWorkspace } from "react-icons/bs";
+import { FaChevronDown } from "react-icons/fa";
 
-export {
-  LiaTimesSolid,
-  HiBars3BottomRight,
-  FaLinkedinIn,
-  FaXTwitter,
+export { 
+  LiaTimesSolid, 
+  HiBars3BottomRight, 
+  FaLinkedinIn, 
+  FaXTwitter, 
+  FcGoogle, 
+  FaGithub,
+  FaEye,
+  FaEyeSlash,
+  MdEmail,
+  RiLockPasswordLine,
   FaArrowRight,
   HiCheck,
-  IoIosArrowForward
+  IoIosArrowDown,
+  IoIosArrowForward,
+  MdEditSquare,
+  IoMdArchive,
+  HiTrash,
+  FaCirclePlus,
+  MdOutlineLogout,
+  BsPersonWorkspace,
+  FaChevronDown
+ 
 };
+
+
