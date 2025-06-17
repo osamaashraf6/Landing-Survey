@@ -10,7 +10,14 @@ import { FaEyeSlash } from "react-icons/fa";
 import { MdEmail } from 'react-icons/md';
 import { RiLockPasswordLine } from 'react-icons/ri';
 import { HiCheck } from "react-icons/hi";
-import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
+import { MdEditSquare } from "react-icons/md";
+import { IoMdArchive } from "react-icons/io";
+import { HiTrash } from "react-icons/hi2";
+import { FaCirclePlus } from "react-icons/fa6";
+import { MdOutlineLogout } from "react-icons/md";
+import { BsPersonWorkspace } from "react-icons/bs";
+import { FaChevronDown } from "react-icons/fa";
 
 export { 
   LiaTimesSolid, 
@@ -25,7 +32,15 @@ export {
   RiLockPasswordLine,
   FaArrowRight,
   HiCheck,
-  IoIosArrowForward
+  IoIosArrowDown,
+  IoIosArrowForward,
+  MdEditSquare,
+  IoMdArchive,
+  HiTrash,
+  FaCirclePlus,
+  MdOutlineLogout,
+  BsPersonWorkspace,
+  FaChevronDown
 };
 
 

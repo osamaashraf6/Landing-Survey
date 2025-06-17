@@ -1,4 +1,5 @@
 import * as Img from "@/assets/images/Images";
+import * as Icon from "@/assets/icons/Icons"; // ✅ Correct path to icon components
 
 const cardData = [
   {
@@ -16,6 +17,7 @@ const cardData = [
     content: "Get instant insights with clean charts and downloadable reports",
   },
 ];
+
 const cardDetails = {
   feedBack: [
     {
@@ -186,6 +188,7 @@ const cardDetails = {
     },
   ],
 };
+
 const plan = [
   {
     title: "Basic",
@@ -253,6 +256,24 @@ const plans = [
   },
 ];
 
+const items = [
+  {
+    title: "drafts",
+    url: "#",
+    icon: Icon.MdEditSquare,
+  },
+  {
+    title: "archive",
+    url: "#",
+    icon: Icon.IoMdArchive,
+  },
+  {
+    title: "trash",
+    url: "#",
+    icon: Icon.HiTrash,
+  },
+];
+
 const formTypes = [
   "Registration Forms",
   "Application Forms",
@@ -292,4 +313,4 @@ const formTypes = [
   "Abstract Forms",
 ];
 
-export { cardData, cardDetails, plan, plans, formTypes };
+export { cardData, cardDetails, plan, plans, items, formTypes };
