@@ -5,12 +5,12 @@
 
 html.light {
   background-color: #ffffff;
-   color: #332e2e;
+   color: oklch(0.21 0.03 263.45);
   
 }
 
 html.dark {
-  background-color: #292727;
+  background-color :oklch(0.21 0.03 263.45);
   color: #ffffff;
   
 }
