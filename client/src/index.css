@@ -98,7 +98,6 @@ a.disabled,
 html.light {
   background-color: #ffffff;
   color: oklch(0.21 0.03 263.45);
-  
   /* Light mode specific overrides if needed */
   --color-primary: oklch(0.21 0.03 263.45);
   --color-secondary: #6b7280;

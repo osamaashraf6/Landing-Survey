@@ -43,7 +43,7 @@ const Faqs = () => {
                 key={index}
                 className="flex items-center gap-2 bg-accent-light text-primary px-3 py-1 rounded-md shadow-sm hover:bg-accent-hover transition"
               >
-                <span className="bg-accent w-4 h-4 rounded-full text-white flex items-center justify-center">
+                <span className="bg-primryBtn w-4 h-4 rounded-full text-white flex items-center justify-center">
                   <IoIosArrowForward className="text-xs" />
                 </span>
                 <span className="text-sm font-medium">{form}</span>
