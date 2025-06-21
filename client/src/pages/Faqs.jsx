@@ -4,7 +4,7 @@ import { formTypes } from '../utils/data';
 
 const Faqs = () => {
   return (
-    <div className='bg-gray-50 transition-colors duration-300'>
+    <div className=' transition-colors duration-300'>
        <div className="max-w-[1050px] mx-auto p-6 min-h-screen">
       {/* Header */}
       <div className="text-center mb-8">
