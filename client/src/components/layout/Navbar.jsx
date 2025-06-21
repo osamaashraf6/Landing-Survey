@@ -1,21 +1,28 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import * as Icons from "../../assets/icons/Icons";
+
 import DarkModeToggle from "../../features/DarkMode/DarkMode";
+
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
 const Navbar = () => {
-
   const [open, setOpen] = useState(false);
-
   return (
     <>
-      <header className=" sticky top-0 z-30 bg-white shadow-md py-1.5 w-full">
+      <header className=" sticky top-0 z-30 bg-[#f9f9fb]   py-1.5 w-full">
         <div className="container">
           <div className="parnav flex justify-between items-center py-2">
             <div className="brand xl:w-[35%] w-full flex items-center justify-between">
-              <Link
-                to="/"
-                className="text-xl font-bold flex items-center gap-2"
-              >
+              <Link to="/" className="text-xl font-bold flex items-center gap-2">
                 <span className="text-primary">Survey</span>Land
               </Link>
               <div className="hamburger-control  ">
@@ -31,24 +38,63 @@ const Navbar = () => {
             <nav className="xl:flex hidden navigation w-[65%] items-center justify-between">
               <ul className="flex items-center gap-10">
                 <li>
-                  <NavLink className="hover:text-primary transition delay-150 ease-in-out" to="/">Home</NavLink>
+                  <NavLink className="hover:text-primary transition delay-150 ease-in-out" to="/">
+                    Home
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink className="hover:text-primary transition delay-150 ease-in-out" to="/about">About Us</NavLink>
+                  <NavLink
+                    className="hover:text-primary transition delay-150 ease-in-out"
+                    to="/about"
+                  >
+                    About Us
+                  </NavLink>
+                </li>
+
+                <li>
+                  <NavLink
+                    className="hover:text-primary transition delay-150 ease-in-out"
+                    to="/faqs"
+                  >
+                    FAQs
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink className="hover:text-primary transition delay-150 ease-in-out" to="/contact">Contact Us</NavLink>
-                </li>
-                <li>
-                  <NavLink className="hover:text-primary transition delay-150 ease-in-out" to="/faqs">FAQs</NavLink>
-                </li>
-                <li>
-                  <NavLink className="hover:text-primary transition delay-150 ease-in-out" to="/pricing">Pricing</NavLink>
+                  <NavLink
+                    className="hover:text-primary transition delay-150 ease-in-out"
+                    to="/pricing"
+                  >
+                    Pricing
+                  </NavLink>
                 </li>
               </ul>
-              <DarkModeToggle/>
+              <DarkModeToggle />
             </nav>
             <ul className="xl:flex hidden items-center gap-4">
+              <li>
+                <Select>
+                  <SelectTrigger className="w-[70px] text-[#FFA630] bg-white border border-[#FFA630] rounded-md">
+                    <SelectValue placeholder="EN" />
+                  </SelectTrigger>
+
+                  <SelectContent className="w-[56px] border border-[#FFA630] shadow-md bg-white">
+                    <SelectGroup>
+                      <SelectItem
+                        value="ar"
+                        className="  hover:bg-[#eeeeee] focus:bg-[#eeeeee] text-[#FFA630] px-2 py-1"
+                      >
+                        AR
+                      </SelectItem>
+                      <SelectItem
+                        value="en"
+                        className="  hover:bg-[#eeeeee] focus:bg-[#eeeeee] text-[#FFA630] px-2 py-1"
+                      >
+                        EN
+                      </SelectItem>
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
+              </li>
               <li>
                 <Link to="signin">Login</Link>
               </li>
@@ -68,10 +114,7 @@ const Navbar = () => {
               } navigation xl:hidden fixed top-0 w-[310px] p-4 h-screen back z-50 bg-white/30 backdrop-blur-sm transition-all duration-500 ease-in-out`}
             >
               <div className="flex items-center justify-between mb-16">
-                <Link
-                  to="/"
-                  className="text-[34px] font-bold flex items-center gap-2"
-                >
+                <Link to="/" className="text-[34px] font-bold flex items-center gap-2">
                   <span className="text-primary">Survey</span>Land
                 </Link>
                 <button
@@ -99,10 +142,7 @@ const Navbar = () => {
                     <Link to="signin">Login</Link>
                   </li>
                   <li>
-                    <Link
-                      to="signup"
-                      className="bg-primary w-[120px] rounded-xl text-white p-2"
-                    >
+                    <Link to="signup" className="bg-primary w-[120px] rounded-xl text-white p-2">
                       Sign Up
                     </Link>
                   </li>
