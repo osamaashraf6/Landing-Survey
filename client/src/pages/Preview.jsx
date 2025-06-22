@@ -39,7 +39,7 @@ const Preview = () => {
                   {index + 1}. {item?.questionText}
                 </h3>
                 {item?.type === "textarea" ? (
-                  <textarea className="outline-0 p-2 text-sm bg-white w-full border border-gray-300 h-[106px]"></textarea>
+                  <textarea className="outline-0 p-2 text-sm  w-full border border-gray-300 h-[106px]"></textarea>
                 ) : item?.type === "mcq" ? (
                   item?.choices.map((option, index) => (
                     <div
@@ -60,7 +60,7 @@ const Preview = () => {
         <div className="flex gap-3 items-center">
           <Link
             to="/dashboard"
-            className=" bg-black text-center py-1.5 rounded-md w-[150px] text-white   cursor-pointer"
+            className=" bg-primary text-center py-1.5 rounded-md w-[150px] text-white   cursor-pointer"
           >
             Done
           </Link>

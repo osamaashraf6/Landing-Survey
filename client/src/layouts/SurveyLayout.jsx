@@ -8,7 +8,7 @@ const SurveyLayout = () => {
   return (
     <>
       <Navbar />
-      <section className="bg-[#f9f9fb] min-h-screen ">
+      <section className="  min-h-screen ">
         <SurveyHeader />
         <SidebarProvider>
  

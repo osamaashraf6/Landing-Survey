@@ -25,8 +25,6 @@ const SignIn = lazy(() => import("../pages/SignIn")); //
 const SignUp = lazy(() => import("../pages/SignUp")); //
 const FillingForm = lazy(() => import("../pages/FillingForm")); //
 
-
-
 // routing config
 const router = createBrowserRouter([
   {
@@ -182,7 +180,6 @@ const router = createBrowserRouter([
       </AuthGuard>
     ),
   },
-
 ]);
 const AppRouter = () => {
   return <RouterProvider router={router}></RouterProvider>;

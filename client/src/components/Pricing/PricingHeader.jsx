@@ -8,7 +8,7 @@ function PricingHeader() {
     <div>
       <div className="container  pb-[130px]">
         <div className="text-center">
-          <h2 className=" text-black pb-[30px] pt-[120px] text-3xl">
+          <h2 className="   pb-[30px] pt-[120px] text-3xl">
             Plans & <span className="text-[#00B7C1]">Pricing</span>
           </h2>
           <p className="text-gray-600 pb-[5px]">

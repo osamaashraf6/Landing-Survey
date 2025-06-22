@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button } from "@/components/ui/button";
 import usePublishLink from "@/hooks/publishLinkHook";
 import { Navbar } from "@/components";
 import { useSearchParams } from "react-router-dom";
+import { ThemeContext } from "@/context/ThemeContext";
 
 const FillingForm = () => {
   const { useGetAllQuestionsFromPublishLinkQuery } = usePublishLink();
   const [searchParams] = useSearchParams();
   const link = searchParams.get("link");
   const { data: qlinks, isPending } = useGetAllQuestionsFromPublishLinkQuery(link);
+  const { theme } = useContext(ThemeContext);
 
   return (
     <>
@@ -17,7 +19,13 @@ const FillingForm = () => {
         <div className="md:w-[700px]">
           <h2 className="text-xl pb-4">Express Your OPinion Below.</h2>
           {/*  */}
-          <div className="rounded-md py-2 px-5  border border-gray-500  font-semibold ">
+          <div
+            className={`rounded-md py-5 px-5   ${
+              theme === "dark"
+                ? "shadow-[0_-1px_10px_rgba(255,255,255,0.2)]"
+                : "bg-white border border-gray-300"
+            }  font-semibold `}
+          >
             <h2 className="pb-2 text-gray-700">Title:</h2>
             <p className="text-[#00B7C1] text-lg">{qlinks?.title}</p>
             <h2 className="py-2 text-gray-700">Description:</h2>
