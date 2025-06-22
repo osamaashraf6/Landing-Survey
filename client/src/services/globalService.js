@@ -4,6 +4,7 @@ const globalService = {
   //   Routes
   routes: {
     preview: "/questions",
+    publishLink: "/survey/survey",
     auth: "/auth",
     addresses: "/addresses",
     survey: "/survey",

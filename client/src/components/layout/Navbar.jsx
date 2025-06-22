@@ -18,7 +18,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <header className=" sticky top-0 z-30 bg-[#f9f9fb]   py-1.5 w-full">
+      <header className=" sticky top-0 z-50  shadow   py-1.5 w-full">
         <div className="container">
           <div className="parnav flex justify-between items-center py-2">
             <div className="brand xl:w-[35%] w-full flex items-center justify-between">
@@ -111,7 +111,7 @@ const Navbar = () => {
             <nav
               className={`${
                 open ? "right-0 " : "right-[-350px]"
-              } navigation xl:hidden fixed top-0 w-[310px] p-4 h-screen back z-50 bg-white/30 backdrop-blur-sm transition-all duration-500 ease-in-out`}
+              } navigation xl:hidden fixed top-0 w-[310px] p-4 h-screen back z-50 bg-[#111826]/30 backdrop-blur-sm transition-all duration-500 ease-in-out`}
             >
               <div className="flex items-center justify-between mb-16">
                 <Link to="/" className="text-[34px] font-bold flex items-center gap-2">
