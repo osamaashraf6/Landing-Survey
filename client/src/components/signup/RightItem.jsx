@@ -36,6 +36,9 @@ const RightItem = () => {
               <Icons.MdEmail />
             </span>
           </div>
+
+
+          {/*  */}
           <div className="formcontrol relative">
             <span className="absolute text-xs left-2  top-3 text-gray-400">
               <Icons.RiLockPasswordLine />
@@ -45,7 +48,6 @@ const RightItem = () => {
               placeholder="Password"
               className="text-gray-500 text-sm pl-7 w-full placeholder:text-gray-500   placeholder:text-xs bg-[#EFF0F3] border-0 outline-0 rounded-md p-2"
             />
-
             <div className="absolute text-xs right-2 top-3   text-gray-400">
               {showPassword ? (
                 <span
