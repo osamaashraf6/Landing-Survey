@@ -32,7 +32,7 @@ const SignIn = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <AuthHeader />
-      <main className="flex-grow flex bg-gray-50">
+      <main className="flex-grow flex  ">
         <div className="w-full md:w-4/5 p-8 flex items-center justify-center">
           <div className="w-full max-w-md">
             <h1 className="text-5xl font-bold text-center text-primary mb-15">SIGN IN</h1>

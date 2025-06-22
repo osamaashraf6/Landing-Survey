@@ -7,10 +7,12 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-import { MdEmail } from 'react-icons/md';
-import { RiLockPasswordLine } from 'react-icons/ri';
+import { MdEmail } from "react-icons/md";
+import { RiLockPasswordLine } from "react-icons/ri";
 import { HiCheck } from "react-icons/hi";
- 
+
+import { CiCirclePlus } from "react-icons/ci";
+
 import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
 import { MdEditSquare } from "react-icons/md";
 import { IoMdArchive } from "react-icons/io";
@@ -22,12 +24,12 @@ import { FaChevronDown } from "react-icons/fa";
 import { PiHandWavingDuotone } from "react-icons/pi";
 import { PiDotsThreeOutlineFill } from "react-icons/pi";
 
-export { 
-  LiaTimesSolid, 
-  HiBars3BottomRight, 
-  FaLinkedinIn, 
-  FaXTwitter, 
-  FcGoogle, 
+export {
+  LiaTimesSolid,
+  HiBars3BottomRight,
+  FaLinkedinIn,
+  FaXTwitter,
+  FcGoogle,
   FaGithub,
   FaEye,
   FaEyeSlash,
@@ -45,7 +47,7 @@ export {
   BsPersonWorkspace,
   FaChevronDown,
   PiHandWavingDuotone,
-  PiDotsThreeOutlineFill
+  PiDotsThreeOutlineFill,
+  CiCirclePlus
 };
-
 

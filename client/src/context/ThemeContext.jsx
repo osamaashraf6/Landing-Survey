@@ -7,14 +7,12 @@ export function ThemeProvider({ children }) {
     localStorage.getItem("theme") || "light"
   );
 
-  useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+useEffect(() => {
+  document.documentElement.classList.remove("light", "dark");
+  document.documentElement.classList.add(theme);
+  localStorage.setItem("theme", theme);
+}, [theme]);
+
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
