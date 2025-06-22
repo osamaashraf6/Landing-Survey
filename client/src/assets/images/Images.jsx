@@ -19,6 +19,8 @@ import event2 from '@/assets/images/event2.png';
 import event3 from '@/assets/images/event3.png';
 import event4 from '@/assets/images/event4.png';
 
+
+import dashImg from '@/assets/images/dash-img.png'
 export {
     feedback1,
     feedback2,
@@ -35,5 +37,6 @@ export {
     event1,
     event2,
     event3,
-    event4
+    event4,
+    dashImg
 }

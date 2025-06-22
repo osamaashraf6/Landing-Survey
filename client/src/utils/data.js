@@ -1,4 +1,5 @@
 import * as Img from "@/assets/images/Images";
+import * as Icon from "@/assets/icons/Icons"; // ✅ Correct path to icon components
 
 const cardData = [
   {
@@ -16,6 +17,7 @@ const cardData = [
     content: "Get instant insights with clean charts and downloadable reports",
   },
 ];
+
 const cardDetails = {
   feedBack: [
     {
@@ -186,6 +188,7 @@ const cardDetails = {
     },
   ],
 };
+
 const plan = [
   {
     title: "Basic",
@@ -253,4 +256,63 @@ const plans = [
   },
 ];
 
-export { cardData, cardDetails, plan, plans };
+
+const items = [
+  {
+    title: "drafts",
+    url: "#",
+    icon: Icon.MdEditSquare,
+  },
+  {
+    title: "archive",
+    url: "#",
+    icon: Icon.IoMdArchive,
+  },
+  {
+    title: "trash",
+    url: "#",
+    icon: Icon.HiTrash,
+  },
+];
+
+const formTypes = [
+  "Registration Forms",
+  "Application Forms",
+  "Contact Forms",
+  "Request Forms",
+  "Order Forms",
+  "Feedback Forms",
+  "Survey Templates",
+  "Signup Forms",
+  "Evaluation Forms",
+  "Event Registration Forms",
+  "Booking Forms",
+  "Petition Forms",
+  "Report Forms",
+  "Reservation Forms",
+  "Employment Forms",
+  "Tracking Forms",
+  "Membership Forms",
+  "Upload Forms",
+  "Quote Forms",
+  "Appointment Forms",
+  "Enrollment Forms",
+  "Volunteer Forms",
+  "Payment Forms",
+  "Wedding Forms",
+  "Calculation Forms",
+  "Content Forms",
+  "Lead Generation Forms",
+  "Consent Forms",
+  "Award Forms",
+  "Subscription Forms",
+  "Recommendation Forms",
+  "Poll Templates",
+  "Donation Forms",
+  "RSVP Forms",
+  "Sponsorship Forms",
+  "Abstract Forms",
+];
+
+export { cardData, cardDetails, plan, plans, items, formTypes };
+
