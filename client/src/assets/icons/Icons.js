@@ -20,6 +20,7 @@ import { MdOutlineLogout } from "react-icons/md";
 import { BsPersonWorkspace } from "react-icons/bs";
 import { FaChevronDown } from "react-icons/fa";
 import { PiHandWavingDuotone } from "react-icons/pi";
+import { PiDotsThreeOutlineFill } from "react-icons/pi";
 
 export { 
   LiaTimesSolid, 
@@ -43,7 +44,8 @@ export {
   MdOutlineLogout,
   BsPersonWorkspace,
   FaChevronDown,
-  PiHandWavingDuotone
+  PiHandWavingDuotone,
+  PiDotsThreeOutlineFill
 };
 
 
