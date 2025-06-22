@@ -3,10 +3,10 @@ const globalService = {
   baseUrl: `${import.meta.env.VITE_BASE_URL}`,
   //   Routes
   routes: {
-    users: "/api/v1/users",
-    auth: "/api/v1/auth",
-    addresses: "/api/v1/addresses",
-    survey: "/api/v1/survey",
+    preview: "/questions",
+    auth: "/auth",
+    addresses: "/addresses",
+    survey: "/survey",
   },
   //   domainImgs
   userImg: `${import.meta.env.VITE_BASE_URL}/users/`,
