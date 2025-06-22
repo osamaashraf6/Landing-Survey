@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button } from "@/components/ui/button";
 import logoPrev from "../assets/images/logo-prev.png";
 import usePreview from "@/hooks/previewHook";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
+import { ThemeContext } from "@/context/ThemeContext";
 
 const Preview = () => {
   const { useGetAllPreviewQuery, createPublishLinkMutation } = usePreview();
@@ -17,6 +18,8 @@ const Preview = () => {
       onError: () => {},
     });
   };
+    const { theme } = useContext(ThemeContext);
+  
   return (
     <>
       <section className="px-10 py-14 flex flex-col gap-5 w-full md:w-[70%]">
@@ -39,7 +42,7 @@ const Preview = () => {
                   {index + 1}. {item?.questionText}
                 </h3>
                 {item?.type === "textarea" ? (
-                  <textarea className="outline-0 p-2 text-sm  w-full border border-gray-300 h-[106px]"></textarea>
+                  <textarea className={`outline-0 p-2 text-sm  ${theme === "dark" ? "" : "bg-white"} w-full border border-gray-300 h-[106px]`}></textarea>
                 ) : item?.type === "mcq" ? (
                   item?.choices.map((option, index) => (
                     <div
