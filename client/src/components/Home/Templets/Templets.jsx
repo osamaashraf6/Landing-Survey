@@ -6,7 +6,7 @@ export default function Templets() {
 
 
     return (
-        <section>
+        <section >
             <div className="container mx-auto px-8">
                 <div className='grid grid-cols-1 gap-6'>
                     <h3 className="font-poppins font-semibold text-3xl capitalize leading-13">Popular  <span className="text-primryBtn">Templates</span> </h3>
