@@ -1,4 +1,3 @@
- 
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import logoSurveyDetails from "../assets/images/logo-survey-details.png";
@@ -35,14 +34,12 @@ const SurveyDetails = () => {
   const questions = [
     {
       id: 1,
-      question:
-        "What did you like most about the physics course or the instructor?",
+      question: "What did you like most about the physics course or the instructor?",
       type: "text",
     },
     {
       id: 2,
-      question:
-        "What did you like most about the physics course or the instructor?",
+      question: "What did you like most about the physics course or the instructor?",
       type: "text",
     },
     {
@@ -68,9 +65,7 @@ const SurveyDetails = () => {
         </Button>
         {/*  */}
         <div className="rounded-md py-2 px-5 bg-white flex items-center justify-between ">
-          <p className="text-[#00B7C1] font-semibold text-lg">
-            Explaining Physics Concepts
-          </p>
+          <p className="text-[#00B7C1] font-semibold text-lg">Explaining Physics Concepts</p>
           <Button className="  text-white   cursor-pointer">Edit</Button>
         </div>
         {/*  */}
@@ -90,9 +85,7 @@ const SurveyDetails = () => {
                       className="formcontrol pb-3 flex items-center gap-2 text-xs text-gray-500"
                     >
                       <input id={`ans-${item.id}-${index}`} type="radio" />
-                      <label htmlFor={`ans-${item.id}-${index}`}>
-                        {option}
-                      </label>
+                      <label htmlFor={`ans-${item.id}-${index}`}>{option}</label>
                     </div>
                   ))
                 ) : null}
@@ -169,9 +162,7 @@ const SurveyDetails = () => {
                 >
                   CANCEL
                 </Button>
-                <Button className=" w-[85px] text-white   cursor-pointer">
-                  SAVE
-                </Button>
+                <Button className=" w-[85px] text-white   cursor-pointer">SAVE</Button>
               </div>
             </>
           )}
@@ -186,9 +177,7 @@ const SurveyDetails = () => {
               <Icons.CiCirclePlus /> Add Question
             </Button>
           )}
-          <Button className=" w-[150px] text-white   cursor-pointer">
-            Preview Survey
-          </Button>
+          <Button className=" w-[150px] text-white   cursor-pointer">Preview Survey</Button>
         </div>
       </section>
     </>
@@ -196,4 +185,3 @@ const SurveyDetails = () => {
 };
 
 export default SurveyDetails;
- 
