@@ -16,7 +16,7 @@ import { ThemeContext } from "@/context/ThemeContext";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const { theme } = useContext(ThemeContext);
-  console.log(theme)
+  console.log(theme);
   return (
     <>
       <header
@@ -116,7 +116,9 @@ const Navbar = () => {
             <nav
               className={`${
                 open ? "right-0 " : "right-[-350px]"
-              } navigation xl:hidden fixed top-0 w-[310px] p-4 h-screen back z-50 bg-[#111826]/30 backdrop-blur-sm transition-all duration-500 ease-in-out`}
+              } navigation xl:hidden fixed top-0 w-[310px] p-4 h-screen back z-50 ${
+                theme === "dark" ? "bg-[#111826]/80 " : "bg-white/10"
+              } backdrop-blur-sm transition-all duration-500 ease-in-out`}
             >
               <div className="flex items-center justify-between mb-16">
                 <Link to="/" className="text-[34px] font-bold flex items-center gap-2">
@@ -131,17 +133,15 @@ const Navbar = () => {
               </div>
               <ul className="">
                 <li className="py-4 border-y hover:text-primary">
-                  <Link to="">Home</Link>
+                  <Link to="/">Home</Link>
                 </li>
                 <li className="py-4 border-b hover:text-primary">
                   <Link to="/about">About</Link>
                 </li>
                 <li className="py-4 border-b hover:text-primary">
-                  <Link to="/contact">Contact</Link>
+                  <Link to="/faqs">FAQs</Link>
                 </li>
-                <li className="py-4 border-b hover:text-primary">
-                  <Link to="">Features</Link>
-                </li>
+
                 <ul className="flex mt-16 items-center gap-4">
                   <li>
                     <Link to="signin">Login</Link>
@@ -151,6 +151,7 @@ const Navbar = () => {
                       Sign Up
                     </Link>
                   </li>
+                  <DarkModeToggle />
                 </ul>
               </ul>
             </nav>
