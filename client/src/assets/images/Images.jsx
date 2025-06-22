@@ -18,39 +18,10 @@ import event2 from "@/assets/images/event2.png";
 import event3 from "@/assets/images/event3.png";
 import event4 from "@/assets/images/event4.png";
 
- 
-import event1 from '@/assets/images/event1.png';
-import event2 from '@/assets/images/event2.png';
-import event3 from '@/assets/images/event3.png';
-import event4 from '@/assets/images/event4.png';
-
-
-import dashImg from '@/assets/images/dash-img.png'
-import emptyImg from '@/assets/images/empty.png'
-import uploadImg from '@/assets/images/upload.png'
-export {
-    feedback1,
-    feedback2,
-    feedback3,
-    feedback4,
-    market1,
-    market2,    
-    market3,
-    market4,
-    edu1,
-    edu2,
-    edu3,
-    edu4,
-    event1,
-    event2,
-    event3,
-    event4,
-    dashImg,
-    emptyImg,
-    uploadImg
-}
- 
 import dashImg from "@/assets/images/dash-img.png";
+import emptyImg from "@/assets/images/empty.png";
+import uploadImg from "@/assets/images/upload.png";
+
 import google from "@/assets/images/google.png";
 import github from "@/assets/images/github.png";
 export {
@@ -73,5 +44,6 @@ export {
   dashImg,
   google,
   github,
+  emptyImg,
+  uploadImg,
 };
- 
