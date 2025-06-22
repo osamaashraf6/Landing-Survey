@@ -11,6 +11,7 @@ const SurveyLayout = () => {
       <section className="bg-[#f9f9fb] min-h-screen ">
         <SurveyHeader />
         <SidebarProvider>
+ 
           <div className="relative">
             <SurveySidebar />
           </div>
@@ -18,6 +19,7 @@ const SurveyLayout = () => {
             <div className=" absolute top-21 right-2 lg:top-22 md:right-auto z-20 ">
               <SidebarTrigger />
             </div>
+ 
             <Outlet />
           </main>
         </SidebarProvider>
