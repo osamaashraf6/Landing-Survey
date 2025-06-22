@@ -19,6 +19,9 @@ import event3 from "@/assets/images/event3.png";
 import event4 from "@/assets/images/event4.png";
 
 import dashImg from "@/assets/images/dash-img.png";
+import emptyImg from "@/assets/images/empty.png";
+import uploadImg from "@/assets/images/upload.png";
+
 import google from "@/assets/images/google.png";
 import github from "@/assets/images/github.png";
 export {
@@ -41,4 +44,6 @@ export {
   dashImg,
   google,
   github,
+  emptyImg,
+  uploadImg,
 };
