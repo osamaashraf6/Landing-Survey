@@ -19,6 +19,7 @@ import { FaCirclePlus } from "react-icons/fa6";
 import { MdOutlineLogout } from "react-icons/md";
 import { BsPersonWorkspace } from "react-icons/bs";
 import { FaChevronDown } from "react-icons/fa";
+import { PiHandWavingDuotone } from "react-icons/pi";
 
 export { 
   LiaTimesSolid, 
@@ -41,8 +42,8 @@ export {
   FaCirclePlus,
   MdOutlineLogout,
   BsPersonWorkspace,
-  FaChevronDown
- 
+  FaChevronDown,
+  PiHandWavingDuotone
 };
 
 
