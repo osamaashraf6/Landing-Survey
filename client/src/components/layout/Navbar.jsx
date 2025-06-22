@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import * as Icons from "../../assets/icons/Icons";
-
 import DarkModeToggle from "../../features/DarkMode/DarkMode";
-
 import {
   Select,
   SelectContent,
@@ -13,12 +11,19 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { ThemeContext } from "@/context/ThemeContext";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const { theme } = useContext(ThemeContext);
+  console.log(theme)
   return (
     <>
-      <header className=" sticky top-0 z-50  shadow   py-1.5 w-full">
+      <header
+        className={`${
+          theme === "dark" ? "bg-[#111826]" : "bg-[#fafafa]"
+        } sticky top-0 z-50  border-b border-gray-200   py-1.5 w-full`}
+      >
         <div className="container">
           <div className="parnav flex justify-between items-center py-2">
             <div className="brand xl:w-[35%] w-full flex items-center justify-between">
