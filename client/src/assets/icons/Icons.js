@@ -10,9 +10,8 @@ import { FaEyeSlash } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { HiCheck } from "react-icons/hi";
-
 import { CiCirclePlus } from "react-icons/ci";
-
+import { FaPen } from "react-icons/fa";
 import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
 import { MdEditSquare } from "react-icons/md";
 import { IoMdArchive } from "react-icons/io";
@@ -45,4 +44,5 @@ export {
   BsPersonWorkspace,
   FaChevronDown,
   CiCirclePlus,
+  FaPen,
 };
