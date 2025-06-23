@@ -13,8 +13,7 @@ import {
 } from "@/components/ui/sidebar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "@/components/ui/collapsible";
-
-import { dashImg } from "@/assets/images/Images";
+import * as Images from "@/assets/images/Images";
 import {
   FaCirclePlus,
   MdOutlineLogout,
@@ -22,8 +21,10 @@ import {
   FaChevronDown,
 } from "@/assets/icons/Icons";
 import { useNavigate, useLocation } from "react-router-dom";
-
 import { items } from "@/utils/data";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "@/redux/userslice/apiCalls";
+import { toast } from "sonner";
 const SurveySidebar = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -31,26 +32,32 @@ const SurveySidebar = () => {
   const handleNavigation = (url) => {
     navigate(url);
   };
+  const dispatch = useDispatch();
+  const handleLogOut = () => {
+    logout(dispatch);
+    toast.success("Logout successfully");
+  };
   const isDashboard = location.pathname === "/dashboard";
-
+  const { currentUser } = useSelector((state) => state.user);
   return (
     <Sidebar
       className="h-[calc(100vh-4.25rem)] flex flex-col border-r border-gray-200    [box-shadow:0_4px_16px_#00000814] mt-[4.25rem]"
       collapsible="icon"
     >
-      {" "}
       <SidebarContent className="  flex-1 ">
         <div className="flex items-center   gap-2 w-full [box-shadow:0_0px_16px_#00000816] p-3.5">
           <Avatar className="w-10 h-10 flex items-center">
             <AvatarImage
-              src={dashImg}
+              src={Images.userAvatar}
               alt=""
               className="w-8 h-8 rounded-full overflow-hidden object-fill"
             />
             <AvatarFallback className="rounded-lg text-red-400">name</AvatarFallback>
           </Avatar>
           <div className="flex items-center gap-2 w-24">
-            <p className="font-medium text-sm text-gray-500 capitalize">reham</p>
+            <p className="font-medium text-sm text-gray-500 capitalize">
+              {currentUser?.user?.name}
+            </p>
             <FaChevronDown />
           </div>
         </div>
@@ -126,13 +133,13 @@ const SurveySidebar = () => {
               asChild
               className="transition-all duration-200 hover:translate-x-2 hover:text-primary hover:bg-transparent  text-[#62636C] rounded-md"
             >
-              <a
-                href={"#"}
+              <div
+               
                 className="flex items-center gap-2 text-gray-400  font-medium text-sm capitalize"
               >
                 <MdOutlineLogout className="text-[#62636C]" />
-                logout
-              </a>
+                <button onClick={handleLogOut}>logout</button>
+              </div>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
