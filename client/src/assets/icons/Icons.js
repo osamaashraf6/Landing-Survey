@@ -25,7 +25,9 @@ import { PiHandWavingDuotone } from "react-icons/pi";
 import { PiDotsThreeOutlineFill } from "react-icons/pi";
  
 import { FaArrowLeftLong } from "react-icons/fa6";
- 
+import { FaLink } from "react-icons/fa";
+import { MdOutlineDateRange } from "react-icons/md";
+
 
 export {
   LiaTimesSolid,
@@ -57,6 +59,8 @@ export {
   CiCirclePlus,
   FaPen,
   FaArrowLeftLong,
+  FaLink,
+  MdOutlineDateRange
  
 };
 

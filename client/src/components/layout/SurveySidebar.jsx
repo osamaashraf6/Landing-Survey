@@ -24,7 +24,10 @@ import {
 import { useNavigate, useLocation } from "react-router-dom";
 
 import { items } from "@/utils/data";
+import { useContext } from "react";
+import { ThemeContext } from "@/context/ThemeContext";
 const SurveySidebar = () => {
+  const {theme}= useContext(ThemeContext)
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -35,7 +38,7 @@ const SurveySidebar = () => {
 
   return (
     <Sidebar
-      className="h-[calc(100vh-4.25rem)] flex flex-col border-r border-gray-200    [box-shadow:0_4px_16px_#00000814] mt-[4.25rem]"
+      className={` ${theme === "dark" ? "[box-shadow:0_4px_16px_rgba(255,255,255,0.2)] border-none" :"[box-shadow:0_4px_16px_#00000814]  border-gray-200 "}h-[calc(100vh-4.25rem)] flex flex-col border-r    mt-[4.25rem]`}
       collapsible="icon"
     >
       {" "}
