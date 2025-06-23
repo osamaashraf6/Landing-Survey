@@ -24,6 +24,7 @@ import uploadImg from "@/assets/images/upload.png";
 
 import google from "@/assets/images/google.png";
 import github from "@/assets/images/github.png";
+import userAvatar from "@/assets/images/userAvatar.png";
 export {
   feedback1,
   feedback2,
@@ -46,4 +47,5 @@ export {
   github,
   emptyImg,
   uploadImg,
+  userAvatar,
 };
