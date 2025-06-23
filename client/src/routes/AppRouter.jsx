@@ -23,8 +23,7 @@ const ResetCode = lazy(() => import("../pages/ResetCode")); //
 const ResetPassword = lazy(() => import("../pages/ResetPassword")); //
 const SignIn = lazy(() => import("../pages/SignIn")); //
 const SignUp = lazy(() => import("../pages/SignUp")); //
-
-
+const FillingForm = lazy(() => import("../pages/FillingForm")); //
 
 // routing config
 const router = createBrowserRouter([
@@ -167,6 +166,16 @@ const router = createBrowserRouter([
       <AuthGuard>
         <Suspense fallback={<LazyLoadingRoute />}>
           <Profile />
+        </Suspense>
+      </AuthGuard>
+    ),
+  },
+  {
+    path: "fillingform",
+    element: (
+      <AuthGuard>
+        <Suspense fallback={<LazyLoadingRoute />}>
+          <FillingForm />
         </Suspense>
       </AuthGuard>
     ),

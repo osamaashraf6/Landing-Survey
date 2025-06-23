@@ -1,22 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button } from "@/components/ui/button";
 import logoPrev from "../assets/images/logo-prev.png";
 import usePreview from "@/hooks/previewHook";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
+import { ThemeContext } from "@/context/ThemeContext";
 
 const Preview = () => {
   const { useGetAllPreviewQuery, createPublishLinkMutation } = usePreview();
   const { data: previewData, isPending } = useGetAllPreviewQuery("684fdf3b9eb5e7feec4bd15b");
-  console.log(previewData);
   const handlePublishLink = (surveyId) => {
     createPublishLinkMutation.mutate(surveyId, {
-      onSuccess: () => {
+      onSuccess: (res) => {
         toast.success("Publish link created successfully!");
+        navigator.clipboard.writeText(`http://localhost:5173/fillingform?link=${res.link}`);
       },
       onError: () => {},
     });
   };
+    const { theme } = useContext(ThemeContext);
+  
   return (
     <>
       <section className="px-10 py-14 flex flex-col gap-5 w-full md:w-[70%]">
@@ -32,22 +35,22 @@ const Preview = () => {
 
           {isPending ? (
             <p>Loading...</p>
-          ) : previewData.data.length > 0 ? (
-            previewData.data.map((item, index) => (
-              <div key={item.qid} className="item">
+          ) : previewData?.data?.length > 0 ? (
+            previewData?.data?.map((item, index) => (
+              <div key={item?.qid} className="item">
                 <h3 className="text-sm text-gray-500 pb-3">
-                  {index + 1}. {item.questionText}
+                  {index + 1}. {item?.questionText}
                 </h3>
-                {item.type === "textarea" ? (
-                  <textarea className="outline-0 p-2 text-sm bg-white w-full border border-gray-300 h-[106px]"></textarea>
-                ) : item.type === "mcq" ? (
-                  item.choices.map((option, index) => (
+                {item?.type === "textarea" ? (
+                  <textarea className={`outline-0 p-2 text-sm  ${theme === "dark" ? "" : "bg-white"} w-full border border-gray-300 h-[106px]`}></textarea>
+                ) : item?.type === "mcq" ? (
+                  item?.choices.map((option, index) => (
                     <div
                       key={index}
                       className="formcontrol pb-3 flex items-center gap-2 text-xs text-gray-500"
                     >
-                      <input id={`ans-${item.id}-${index}`} name="mcq" type="radio" />
-                      <label htmlFor={`ans-${item.id}-${index}`}>{option}</label>
+                      <input id={`ans-${item?.id}-${index}`} name="mcq" type="radio" />
+                      <label htmlFor={`ans-${item?.id}-${index}`}>{option}</label>
                     </div>
                   ))
                 ) : null}
@@ -60,7 +63,7 @@ const Preview = () => {
         <div className="flex gap-3 items-center">
           <Link
             to="/dashboard"
-            className=" bg-black text-center py-1.5 rounded-md w-[150px] text-white   cursor-pointer"
+            className=" bg-primary text-center py-1.5 rounded-md w-[150px] text-white   cursor-pointer"
           >
             Done
           </Link>
