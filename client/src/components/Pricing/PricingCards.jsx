@@ -9,10 +9,8 @@ function PricingCards() {
       {plans.map((plan, index) => (
         <div
           key={index}
-          className={` px-[40px] py-[40px] text-black rounded-2xl   shadow-[8px_8px_10px_8px_#e2e8f0] ${
-            plan.highlighted
-              ? "bg-[#00B7C1] text-white  md:-translate-y-15"
-              : "bg-white text-black"
+          className={` px-[40px] py-[40px] text-black rounded-2xl shadow-md ${
+            plan.highlighted ? "bg-[#00B7C1] text-white  md:-translate-y-15" : "bg-white text-black"
           }`}
         >
           <h1 className="font-bold text-[25px] mb-[25px]">{plan.title}</h1>
@@ -24,7 +22,7 @@ function PricingCards() {
             {plan.description}
           </p>
           <p className=" font-bold text-[45px] ">
-            {`$${plan.price} `}{" "}
+            {`$${plan.price} `}
             <span
               className={`text-gray-500 font-normal text-[20px] ${
                 plan.highlighted ? "  text-white " : "text-[#00B7C1]"
@@ -45,9 +43,7 @@ function PricingCards() {
               <div className="flex items-center gap-2 mb-[20px]" key={id}>
                 <Icons.HiCheck
                   className={` p-[2px] w-[22px] h-[22px] font-bold rounded-[50%] ${
-                    plan.highlighted
-                      ? "text-[#00B7C1] bg-white"
-                      : "bg-[#00B7C1] text-white"
+                    plan.highlighted ? "text-[#00B7C1] bg-white" : "bg-[#00B7C1] text-white"
                   }`}
                 />
                 <li>{feature}</li>
