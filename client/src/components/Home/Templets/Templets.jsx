@@ -6,15 +6,15 @@ export default function Templets() {
 
 
     return (
-        <section>
+        <section >
             <div className="container mx-auto px-8">
                 <div className='grid grid-cols-1 gap-6'>
                     <h3 className="font-poppins font-semibold text-3xl capitalize leading-13">Popular  <span className="text-primryBtn">Templates</span> </h3>
 
                     {/* Scroll container with fixed max width */}
 
-                    <ul className='list-decimal font-poppins font-semibold text-base lg:text-2xl leading-8 '>
-                        <li className=''>
+                    <div className='list-decimal font-poppins font-semibold text-base lg:text-2xl leading-8 '>
+                        <div className=''>
                             <div className=' flex justify-between'>
 
                                 <h4 className='font-poppins font-semibold text-sm md:text-xl lg:text-2xl '>Customer Feedback <span className='text-primryBtn'>Surveys</span> </h4>
@@ -33,8 +33,8 @@ export default function Templets() {
                             <CardCommon items={cardDetails.feedBack} />
                         </div>
                     </div>
-                        </li>
-                        <li>
+                        </div>
+                        <div>
                             <div className=' flex justify-between'>
 
                                 <h4 className='font-poppins font-semibold text-sm  md:text-xl lg:text-2xl '>Market  <span className='text-primryBtn'>Research</span> </h4>
@@ -51,8 +51,8 @@ export default function Templets() {
                                     <CardCommon items={cardDetails.market} />
                                 </div>
                             </div>
-                        </li>
-                        <li>
+                        </div>
+                        <div>
                             <div className=' flex justify-between'>
 
                                 <h4 className='font-poppins font-semibold text-sm  md:text-xl lg:text-2xl '>Education & <span className='text-primryBtn'>Training</span> </h4>
@@ -69,8 +69,8 @@ export default function Templets() {
                                     <CardCommon items={cardDetails.education} />
                                 </div>
                             </div>
-                        </li>
-                        <li>
+                        </div>
+                        <div>
                             <div className=' flex justify-between'>
 
                                 <h4 className='font-poppins font-semibold text-sm  md:text-xl lg:text-2xl '> Event <span className='text-primryBtn'>Feedback</span> </h4>
@@ -87,8 +87,8 @@ export default function Templets() {
                                     <CardCommon items={cardDetails.events} />
                                 </div>
                             </div>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
 
 
                     <div className=' flex items-center justify-center mt-5'>
