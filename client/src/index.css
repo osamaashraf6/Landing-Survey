@@ -6,6 +6,7 @@
 
 body {
     font-family: "Inter", sans-serif;
+    background-color: #F5F5F5;
 }
 
 .poppins {
@@ -80,6 +81,29 @@ a.disabled,
     --font-poppins: "Poppins", sans-serif;
     --font-inter: "Inter", sans-serif;
 }
+ 
+.about-gradient-border {
+    width: 410.92px;
+    height: 380.89px;
+    border-radius: 79px;
+    padding: 10px;
+    background: linear-gradient(135deg, #d9d9d9 40%, #00b7c1 100%);
+    transform: rotate(178deg);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .about-image-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    transform: rotate(178deg);
+  }
+  
+ 
 
 /* Base theme variables */
 
@@ -103,3 +127,4 @@ html.dark {
   height: 100%;
   object-fit: fill;
 }
+ 
