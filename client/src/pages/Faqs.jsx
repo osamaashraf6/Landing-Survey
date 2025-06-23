@@ -6,6 +6,7 @@ import { ThemeContext } from "@/context/ThemeContext";
 const Faqs = () => {
   const { theme } = useContext(ThemeContext);
 
+
   return (
 
 

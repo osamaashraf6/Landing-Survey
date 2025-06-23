@@ -27,6 +27,7 @@ const SignIn = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isFetching, error } = useSelector((state) => state.user||{});
+
   console.log(error);
   const handleSubmitMethod = async (data) => {
     const res = await login(dispatch, data);

@@ -21,7 +21,9 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [openDropdwon, setOpenDropdwon] = useState(false);
   const { theme } = useContext(ThemeContext);
+
 const { currentUser } = useSelector((state) => state.user || {});
+
   const dispatch = useDispatch();
   const handleLogOut = () => {
     logout(dispatch);

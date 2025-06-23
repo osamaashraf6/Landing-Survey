@@ -98,15 +98,7 @@ a.disabled,
 html.light {
   background-color: oklch(0.98 0 0);
   color: oklch(0.21 0.03 263.45);
-  /* Light mode specific overrides if needed */
-  --color-primary: oklch(0.21 0.03 263.45);
-  --color-secondary: #6b7280;
-  --color-accent: #06b6d4;
-  --color-accent-light: #cffafe;
-  --color-accent-hover: #67e8f9;
-  --color-surface: #f9fafb;
-  --color-card: #ffffff;
-  --color-border: #e5e7eb;
+
 }
 
 html.dark {
