@@ -260,7 +260,6 @@ const Faqs = () => {
             </p>
           </div>
         </div>
->>>>>>> 930834473b19c23d000e1c85abd161e705634ec5
       </div>
     </section>
   );
