@@ -20,14 +20,13 @@ import { FaCirclePlus } from "react-icons/fa6";
 import { MdOutlineLogout } from "react-icons/md";
 import { BsPersonWorkspace } from "react-icons/bs";
 import { FaChevronDown } from "react-icons/fa";
- 
 import { PiHandWavingDuotone } from "react-icons/pi";
 import { PiDotsThreeOutlineFill } from "react-icons/pi";
- 
+import { IoNotificationsOutline } from "react-icons/io5";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaLink } from "react-icons/fa";
 import { MdOutlineDateRange } from "react-icons/md";
-
+ 
 
 export {
   LiaTimesSolid,
@@ -51,16 +50,13 @@ export {
   MdOutlineLogout,
   BsPersonWorkspace,
   FaChevronDown,
- 
   PiHandWavingDuotone,
   PiDotsThreeOutlineFill,
- 
- 
+  IoNotificationsOutline,
   CiCirclePlus,
   FaPen,
   FaArrowLeftLong,
   FaLink,
   MdOutlineDateRange
- 
-};
 
+};

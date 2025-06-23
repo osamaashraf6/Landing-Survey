@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import * as Icons from "../../assets/icons/Icons";
+import * as Images from "../../assets/images/Images";
 import DarkModeToggle from "../../features/DarkMode/DarkMode";
 import {
   Select,
@@ -12,11 +13,22 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { ThemeContext } from "@/context/ThemeContext";
+import { useDispatch, useSelector } from "react-redux";
+import { Button } from "@/components/ui/button";
+import { logout } from "@/redux/userslice/apiCalls";
+import { toast } from "sonner";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [openDropdwon, setOpenDropdwon] = useState(false);
   const { theme } = useContext(ThemeContext);
-  console.log(theme);
+  const { currentUser } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const handleLogOut = () => {
+    logout(dispatch);
+    toast.success("Logout successfully");
+  };
+
   return (
     <>
       <header
@@ -100,17 +112,62 @@ const Navbar = () => {
                   </SelectContent>
                 </Select>
               </li>
-              <li>
-                <Link to="signin">Login</Link>
-              </li>
-              <li>
-                <Link
-                  to="signup"
-                  className="bg-primary block w-[120px] text-center rounded-xl text-white p-2"
-                >
-                  Sign Up
-                </Link>
-              </li>
+              {currentUser?.user?.name ? (
+                <>
+                  <li>
+                    <Icons.IoNotificationsOutline />
+                  </li>
+                  <li>
+                    <Link to="/profile">{currentUser?.user?.name}</Link>
+                  </li>
+                  <li className="relative w-6 h-6 rounded-full    ">
+                    <img
+                      src={Images.userAvatar}
+                      className="responsive"
+                      alt={currentUser?.user?.name}
+                    />
+                    <button onClick={() => setOpenDropdwon(!openDropdwon)}>
+                      <Icons.IoIosArrowDown className=" cursor-pointer absolute top-0 right-[-16px]" />
+                    </button>
+
+                    <ul
+                      className={`dropdown w-[144px] ${
+                        openDropdwon ? "flex" : "hidden"
+                      } absolute top-[47px] right-[-23px] flex-col   text-gray-500 text-xs bg-white shadow-lg rounded-md `}
+                    >
+                      <li className="border-b rounded-md border-gray-200 p-2 hover:bg-gray-100">
+                        <Link to="/profile" className="w-full flex">
+                          Profile
+                        </Link>
+                      </li>
+                      <li className=" rounded-md p-2 hover:bg-gray-100">
+                        <Link to="/dashboard" className="w-full flex">
+                          Dashboard
+                        </Link>
+                      </li>
+                    </ul>
+                  </li>
+                  <li className="ml-4">
+                    <Button onClick={handleLogOut} className="text-xs">
+                      Logout
+                    </Button>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <Link to="signin">Login</Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="signup"
+                      className="bg-primary block w-[120px] text-center rounded-xl text-white p-2"
+                    >
+                      Sign Up
+                    </Link>
+                  </li>
+                </>
+              )}
             </ul>
             {/* Mobile menu */}
             <nav
