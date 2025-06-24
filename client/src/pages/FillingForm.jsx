@@ -5,6 +5,7 @@ import usePublishLink from "@/hooks/publishLinkHook";
 import { Navbar } from "@/components";
 import { useSearchParams } from "react-router-dom";
 import { ThemeContext } from "@/context/ThemeContext";
+import { toast } from "sonner";
 
 const FillingForm = () => {
   const { useGetAllQuestionsFromPublishLinkQuery } = usePublishLink();
@@ -12,7 +13,7 @@ const FillingForm = () => {
   const link = searchParams.get("link");
   const { data: qlinks, isPending } = useGetAllQuestionsFromPublishLinkQuery(link);
   const { theme } = useContext(ThemeContext);
-const BASE_URL = import.meta.env.VITE_BASE_URL;
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
   const {
     register,
     handleSubmit,
@@ -31,17 +32,17 @@ const BASE_URL = import.meta.env.VITE_BASE_URL;
     };
 
     try {
-      const response = await fetch(`${BASE_URL}/response`, {
+      const response = await fetch(`${BASE_URL}/survey/survey/${link}/response`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
-      const result = await response.json();
-      alert("Submitted successfully");
+      await response.json();
+      toast.success("Response submitted successfully!");
       reset();
     } catch (error) {
-      alert("Submission failed. Please try again.");
+      alert(error, "Submission failed. Please try again.");
     }
   };
 
@@ -108,7 +109,10 @@ const BASE_URL = import.meta.env.VITE_BASE_URL;
                       ></textarea>
                     ) : item?.type === "mcq" ? (
                       item?.choices.map((option, optIndex) => (
-                        <div key={optIndex} className="formcontrol pb-3 flex items-center gap-2 text-xs text-gray-500">
+                        <div
+                          key={optIndex}
+                          className="formcontrol pb-3 flex items-center gap-2 text-xs text-gray-500"
+                        >
                           <input
                             type="radio"
                             id={`q-${item.qid}-${optIndex}`}
@@ -131,7 +135,10 @@ const BASE_URL = import.meta.env.VITE_BASE_URL;
             </div>
 
             <div className="flex gap-3 items-center">
-              <Button type="submit" className="w-[150px] text-white bg-[#FFA630] hover:bg-[#ffa530dd] cursor-pointer">
+              <Button
+                type="submit"
+                className="w-[150px] text-white bg-[#FFA630] hover:bg-[#ffa530dd] cursor-pointer"
+              >
                 Submit
               </Button>
             </div>
