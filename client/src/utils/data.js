@@ -1,4 +1,5 @@
 import * as Img from "@/assets/images/Images";
+import * as Icons from '@/assets/icons/Icons';
 
 const cardData = [
   {
@@ -253,4 +254,41 @@ const plans = [
   },
 ];
 
-export { cardData, cardDetails, plan, plans };
+const ProfileData = [
+  {
+    icons : Icons.MdOutlineDashboard,
+    name : "Dashboard",
+  },
+   {
+    icons : Icons.CiUser,
+    name : "Edit Profile",
+  },
+   {
+    icons : Icons.MdHistory ,
+    name : "Survey History",
+  },
+   {
+    icons : Icons.IoAnalyticsOutline,
+    name : "Saved History",
+  },
+   {
+    icons : Icons.IoIosNotificationsOutline,
+    name : "Notifications",
+  },
+   {
+    icons : Icons.LuSettings2,
+    name : "Survey Preferences",
+  },
+   {
+    icons : Icons.CiSettings,
+    name : "Account Settings",
+  },
+   {
+    icons : Icons.CiLogin,
+    name : "Log Out",
+  },
+];
+
+
+
+export { cardData, cardDetails, plan, plans ,ProfileData  };

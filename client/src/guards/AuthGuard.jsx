@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 
 const AuthGuard = ({ children }) => {
   //   const { currentUser } = useSelector((state) => state.user);
-  const currentUser = false;
+  const currentUser = true;
   return currentUser ? children : <Navigate to="/signin" replace />;
 };
 
