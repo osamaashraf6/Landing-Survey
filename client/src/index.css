@@ -3,6 +3,17 @@
 
 @custom-variant dark (&:is(.dark *));
 
+html.light {
+  background-color: #ffffff;
+   color: oklch(0.21 0.03 263.45);
+  
+}
+
+html.dark {
+  background-color :oklch(0.21 0.03 263.45);
+  color: #ffffff;
+  
+}
 
 body {
     font-family: "Inter", sans-serif;
@@ -87,7 +98,7 @@ a.disabled,
 html.light {
   background-color: oklch(0.98 0 0);
   color: oklch(0.21 0.03 263.45);
- 
+
 }
 
 html.dark {
