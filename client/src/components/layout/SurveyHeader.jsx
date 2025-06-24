@@ -24,7 +24,7 @@ const SurveyHeader = () => {
     <>
       <SidebarContent
  
-        className={`w-full [box-shadow:0_4px_10px_#00000812] ${
+        className={`w-full [box-shadow:0_4px_10px_#00000812] fixed ${
           theme === "dark" ? "[box-shadow:0_4px_16px_rgba(255,255,255,0.2)]" : "bg-white"
  
         } flex justify-end items-end p-4`}

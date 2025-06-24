@@ -33,7 +33,7 @@ export default function SurveyContextProvider({ children }) {
     )
 
     const survData = data?.data || []
-    console.log(survData);
+    
 
     return <>
         <SurveyContext.Provider value={{ survData }}>

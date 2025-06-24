@@ -4,7 +4,7 @@ import SurveyContextProvider from "@/context/SurveyContext";
 
 const Dashboard = () => {
   return <>
-    <section className=" min-h-screen flex flex-col items-center  ">
+    <section className=" min-h-screen flex flex-col items-center pt-6  ">
       <div className="container">
 
         <SurveyContextProvider>
