@@ -14,7 +14,7 @@ const SurveyLayout = () => {
           <div className="relative">
             <SurveySidebar />
           </div>
-          <main className="w-full">
+          <main className="w-full pt-16">
             <div className=" absolute top-21 right-2 lg:top-22 md:right-auto z-20 ">
               <SidebarTrigger className="fixed" />
             </div>
