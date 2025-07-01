@@ -173,11 +173,9 @@ const router = createBrowserRouter([
   {
     path: "fillingform",
     element: (
-      <AuthGuard>
-        <Suspense fallback={<LazyLoadingRoute />}>
-          <FillingForm />
-        </Suspense>
-      </AuthGuard>
+      <Suspense fallback={<LazyLoadingRoute />}>
+        <FillingForm />
+      </Suspense>
     ),
   },
 ]);

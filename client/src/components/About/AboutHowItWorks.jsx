@@ -32,7 +32,7 @@ const AboutHowItWorks = () => {
           {steps.map((step, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-2xl shadow-md flex-1 px-6 py-8 flex flex-col items-center justify-center min-h-[220px]">
+              className=" rounded-2xl shadow-md flex-1 px-6 py-8 flex flex-col items-center justify-center min-h-[220px]">
               <h3 className="text-xl md:text-xl font-bold mb-3 text-gray-900">
                 {step.title}
               </h3>

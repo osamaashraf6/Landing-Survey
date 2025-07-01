@@ -1,6 +1,5 @@
 import React from "react";
 import aboutTreadingActionImage from "@/assets/images/about/Ourmission.svg";
-import "./AboutTreadingAction.css";
 import Btn from "@/components/common/Btn";
 
 const AboutTreadingAction = () => {
@@ -20,7 +19,7 @@ const AboutTreadingAction = () => {
           {[1, 2, 3].map((_, i) => (
             <div
               key={i}
-              className="bg-white rounded-lg shadow-md flex flex-col items-center justify-center w-60 h-24 min-w-[180px] flex-1 mx-auto mb-4 md:mb-0">
+              className=" rounded-lg shadow-md flex flex-col items-center justify-center w-60 h-24 min-w-[180px] flex-1 mx-auto mb-4 md:mb-0">
               <span className="text-gray-800 text-2xl font-semibold">
                 $45,345,654
               </span>
