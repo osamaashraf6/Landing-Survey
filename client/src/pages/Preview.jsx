@@ -10,8 +10,8 @@ const Preview = () => {
   const [searchParams] = useSearchParams();
 
   const surveyId = searchParams.get("surveyId");
-  const { data: previewData, isPending } = useGetAllPreviewQuery(surveyId);
   const { useGetAllPreviewQuery, createPublishLinkMutation } = usePreview();
+  const { data: previewData, isPending } = useGetAllPreviewQuery(surveyId);
 
   const handlePublishLink = (surveyId) => {
     createPublishLinkMutation.mutate(surveyId, {
