@@ -120,7 +120,7 @@ const SurveyDetails = () => {
                     {...register("questionText", {
                       required: "Question is required",
                     })}
-                    className="border p-1.5 pl-3 border-gray-300 placeholder:text-gray-500 bg-[#eff0f3] outline-0 md:w-full placeholder:text-sm rounded-tl-md rounded-bl-md"
+                    className="border text-gray-500 p-1.5 pl-3 border-gray-300 placeholder:text-gray-500 bg-[#eff0f3] outline-0 md:w-full placeholder:text-sm rounded-tl-md rounded-bl-md"
                     placeholder="Enter Your Question"
                   />
 
@@ -159,7 +159,7 @@ const SurveyDetails = () => {
                           newAnswers[index] = e.target.value;
                           setAnswers(newAnswers);
                         }}
-                        className="bg-[#eff0f3] pl-3 p-1.5 rounded border border-gray-300 text-sm w-full outline-0"
+                        className="bg-[#eff0f3] text-gray-500 pl-3 p-1.5 rounded border border-gray-300 text-sm w-full outline-0"
                         placeholder="Enter an answer choice"
                       />
                       <div className="flex items-center gap-2">
