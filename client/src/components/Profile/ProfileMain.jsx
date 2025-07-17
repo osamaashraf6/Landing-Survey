@@ -1,65 +1,53 @@
 import  React, { useState } from 'react';
 import personalImg from '@/assets/images/Mask group.png';
-import { useMutation } from "@tanstack/react-query";
-import { changeName, changePassword } from "@/services/userService";
+import { useQuery } from '@tanstack/react-query';
+import {getProfile} from "@/services/userService";
 
 function ProfileMain() {
   const [formData, setFormData] = useState({
     name: '',
     email:'',
     password:'',
-    oldPassword:'',
     phone:'',
     country:'',
     language:''
   });
-  const nameMutation = useMutation({
-    mutationFn: changeName,
-    onSuccess: (data) => {
-      alert("تم تعديل الاسم بنجاح");
-    },
-    onError: (error) => {
- alert(error?.response?.data?.error || "فشل في تحديث الاسم");
-    }
-  });
-const passwordMutation = useMutation({
-  mutationFn: changePassword,
-  onSuccess: () => {
-    alert("تم تغيير كلمة المرور بنجاح");
-  },
-  onError: () => {
-    alert("فشل في تغيير كلمة المرور. تأكد من الباسورد القديم");
-  }
-});
-  const handleChange = (e)=> {
-  const { name, value } = e.target;
-    setFormData(prev =>({
-      ...prev,
-      [name] : value
-    }));
-  };
+  
+const handleSubmit = (e) => {
+  e.preventDefault(); // تمنع الـ Refresh
 
-  const handleSubmit = (e)=>{
-    e.preventDefault();
-    console.log("submit data", formData);
-    const currentUser = JSON.parse(localStorage.getItem("user"));
+  console.log("تم إرسال البيانات:", formData);
 
-
-  if (
-  formData.name.trim() !== "" &&
-  currentUser &&
-  formData.name !== currentUser.name
-) {
-  nameMutation.mutate({ name: formData.name });
-}
-
-      if (formData.password && formData.oldPassword) {
-    passwordMutation.mutate({
-      oldPassword: formData.oldPassword,
-      newPassword: formData.password,
+  // هنا تقدر تبعت للـ API لو حبيت
+};
+const { isLoading , isError } = useQuery({
+   queryKey: ['profile'],
+  queryFn: getProfile,
+  onSuccess: (data) => {
+      console.log(" Profile Data:", data); //  جرب تشوف هل فعلاً وصل الداتا
+    setFormData({
+      name: data.name || '',
+      email: data.email || '',
+      password: '',
+      phone: data.phone || '',
+      country: data.country || '',
+      language: data.language || '',
     });
-  }
-  }
+   },
+});
+
+const handleChange = (e)=>{
+  const {name, value} = e.target;
+  setFormData((prev)=> ({
+    ...prev,
+    [name]:value,
+
+  }));
+};
+
+if (isLoading) return <p className="text-center">...جارٍ تحميل البيانات</p>;
+if (isError) return <p className="text-red-500 text-center">حدث خطأ أثناء تحميل البيانات</p>;
+
 
   return (
     <div className='space-y-6  bg-white min-h-[83vh]  rounded-2xl p-9'>
@@ -81,8 +69,9 @@ const passwordMutation = useMutation({
         </button>
       </div>
      </div>
-    <div className='grid grid-row-1 md:grid-cols-2 gap-8'>
-        <form className="space-y-2 w-full" onSubmit={handleSubmit}>
+    <div className=''>
+        <form className="space-y-2 w-full grid grid-row-1 md:grid-cols-2 gap-8" onSubmit={handleSubmit}>
+          <div>
            <div>
             <label className="block font-medium text-xs text-gray-500">User Name</label>
             <input 
@@ -99,21 +88,21 @@ const passwordMutation = useMutation({
             <input 
             type="email" 
             name="email"
-             value={formData.email}
+           value={formData.email}
             onChange={handleChange}
             className="bg-gray-200 my-[10px] w-full indent-2 p-2 rounded-[6px] text-xs focus:outline-none"
             placeholder='Gabriella.Mckenzie71@gmail.com'
             />
            </div>
            <div>
-            <label className="block font-medium text-xs  text-gray-500">Old Password</label>
+            <label className="block font-medium text-xs  text-gray-500">Password</label>
             <input 
             type="password" 
-            name="oldPassword"
-            value={formData.oldPassword || ""}
+            name="password"
+                value={formData.password}
             onChange={handleChange}
             className="bg-gray-200 my-[10px] w-full indent-2 p-2 rounded-[6px] text-xs focus:outline-none"
-            placeholder='Old Password'
+            placeholder='Password'
             />
            </div>
             <div className="side-right mt-2">
@@ -125,14 +114,15 @@ const passwordMutation = useMutation({
             </button>
             
            </div>
-      </form>
-        <form className="">
+           </div>
+          <div>
+      
            <div>
             <label className="block font-medium text-xs text-gray-500">phone Number</label>
             <input 
              name="phone"
-            type="number" 
-            value={formData.phone}
+            type="number"
+               value={formData.phone}
             onChange={handleChange}
             className="bg-gray-200 my-[10px] w-full indent-2 p-2 rounded-[6px] text-xs focus:outline-none"
             placeholder='520-631-1454'
@@ -142,8 +132,8 @@ const passwordMutation = useMutation({
             <label className="block mt-2 font-medium text-xs  text-gray-500">Country</label>
             <select 
               name="country"
-              value={formData.country}
-              onChange={handleChange}
+                    value={formData.country}
+      onChange={handleChange}
             className="mt-2  w-full rounded-[6px] bg-gray-200 p-[7px] indent-2 text-gray-600 text-xs focus:outline-none">
            <option value="Netherlands Antilles">Netherlands Antilles</option>
               <option value="Egypt">Egypt</option>
@@ -155,14 +145,14 @@ const passwordMutation = useMutation({
             <label className="block mt-6 font-medium text-xs  text-gray-500">Language</label>
              <select 
               name="language"
-              value={formData.language}
-              onChange={handleChange}
+         value={formData.language}
+      onChange={handleChange}
              className='mt-2 w-full rounded-[6px] bg-gray-200 p-[7px] indent-2 text-gray-600 text-xs focus:outline-none'>
               <option value="English">English</option>
               <option value="Arabic">Arabic</option>
             </select>
            </div>
-          
+          </div>
       </form>
     </div>
     </div>
