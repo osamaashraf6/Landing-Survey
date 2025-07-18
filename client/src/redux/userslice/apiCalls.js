@@ -12,6 +12,7 @@ import {
 } from "./userSlice";
 import globalService from "@/services/globalService";
 import apiClient from "@/utils/apiClient";
+import { toast } from "sonner";
 
 // login method
 export const login = async (dispatch, user) => {
@@ -48,6 +49,8 @@ export const logout = async (dispatch) => {
   try {
     const res = await apiClient.post(`${globalService.routes.auth}/logout`,);
     dispatch(logoutSuccess());
+    toast.success("Logout successfully");
+
     return { payload: res.data };
   } catch (err) {
     dispatch(logoutFailure(err));

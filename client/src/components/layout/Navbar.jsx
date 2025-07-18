@@ -16,17 +16,17 @@ import { ThemeContext } from "@/context/ThemeContext";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "@/components/ui/button";
 import { logout } from "@/redux/userslice/apiCalls";
-import { toast } from "sonner";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [openDropdwon, setOpenDropdwon] = useState(false);
   const { theme } = useContext(ThemeContext);
-  const { currentUser } = useSelector((state) => state.user);
+
+const { currentUser } = useSelector((state) => state.user || {});
+
   const dispatch = useDispatch();
   const handleLogOut = () => {
     logout(dispatch);
-    toast.success("Logout successfully");
   };
 
   return (

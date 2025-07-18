@@ -6,7 +6,10 @@ import { ThemeContext } from "@/context/ThemeContext";
 const Faqs = () => {
   const { theme } = useContext(ThemeContext);
 
+
   return (
+
+
     <section className=" pb-12">
       <div className="max-w-[1050px] mx-auto p-6 min-h-screen">
         {/* Header */}

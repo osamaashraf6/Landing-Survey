@@ -1,4 +1,5 @@
 import { createPublishLink, getAllPreview } from "@/services/previewService";
+import { addQuestion } from "@/services/questionService";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 const usePreview = () => {
   const queryClient = useQueryClient();
@@ -17,9 +18,17 @@ const usePreview = () => {
       queryClient.invalidateQueries(["preview"]);
     },
   });
+  // ! createOneQuestion
+  const createOneQuestionMutation = useMutation({
+    mutationFn: addQuestion,
+    onSuccess: () => {
+      queryClient.invalidateQueries(["preview"]);
+    },
+  });
   return {
     useGetAllPreviewQuery,
     createPublishLinkMutation,
+    createOneQuestionMutation,
   };
 };
 

@@ -1,21 +1,24 @@
 import React, { useContext } from "react";
+import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import usePublishLink from "@/hooks/publishLinkHook";
 import { Navbar } from "@/components";
 import { useSearchParams } from "react-router-dom";
 import { ThemeContext } from "@/context/ThemeContext";
+import { toast } from "sonner";
 
 const FillingForm = () => {
   const { useGetAllQuestionsFromPublishLinkQuery } = usePublishLink();
   const [searchParams] = useSearchParams();
   const link = searchParams.get("link");
-  const { data: qlinks, isPending } = useGetAllQuestionsFromPublishLinkQuery(link);
+  const { data: qlinks, isPending, error } = useGetAllQuestionsFromPublishLinkQuery(link);
+
   const { theme } = useContext(ThemeContext);
 
   return (
     <>
       <Navbar />
-      <section className=" py-14  flex-col gap-5   flex items-center ">
+      <section className="py-14 flex-col gap-5 flex items-center">
         <div className="md:w-[700px]">
           <h2 className="text-xl pb-4">Express Your OPinion Below.</h2>
           {/*  */}

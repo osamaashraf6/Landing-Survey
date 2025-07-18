@@ -12,15 +12,16 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import usePreview from "@/hooks/previewHook";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { ThemeContext } from "@/context/ThemeContext";
+import { useForm } from "react-hook-form";
 
 const SurveyDetails = () => {
   const [open, setOpen] = useState(false);
-  const [type, setType] = useState("comment");
+  const [type, setType] = useState("textarea");
   const [answers, setAnswers] = useState(["", "", ""]);
   const { theme } = useContext(ThemeContext);
-
+  const { surveyId } = useParams();
   const addAnswerAfter = (index) => {
     const newAnswers = [...answers];
     newAnswers.splice(index + 1, 0, "");
@@ -35,11 +36,30 @@ const SurveyDetails = () => {
     }
   };
 
-  const { useGetAllPreviewQuery } = usePreview();
-  const { data: previewData, isPending } = useGetAllPreviewQuery("684fdf3b9eb5e7feec4bd15b");
+  const { useGetAllPreviewQuery, createOneQuestionMutation } = usePreview();
+  const { data: previewData, isPending } = useGetAllPreviewQuery(surveyId);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+  const handleAddQuestion = (data) => {
+    const question = {
+      questionText: data.questionText,
+      type,
+      isRequired: true,
+      ...(type === "mcq" && {
+        choices: answers.filter((ans) => ans.trim() !== ""),
+      }),
+    };
+    createOneQuestionMutation.mutate({ surveyId, question });
+    reset();
+    setOpen(false);
+  };
   return (
     <>
-      <section className="px-4 md:px-10 pt-3 pb-16 flex flex-col gap-5 w-full md:w-[70%]">
+      <section className="px-4 md:px-10 pt-3 pb-16 flex flex-col gap-5 w-full md:w-full xl:w-[85%]">
         {/*  */}
         <h2 className="text-xl">Add question type Text Area (Comment Box)</h2>
         <Button className="text-primary bg-white border py-5 w-[170px] flex justify-start border-[#00B7C1] hover:text-white cursor-pointer">
@@ -91,15 +111,19 @@ const SurveyDetails = () => {
           </div>
           {/*  */}
           {open && (
-            <>
+            <form onSubmit={handleSubmit(handleAddQuestion)}>
               <div className="py-10 px-3 border-y border-gray-300 flex items-center gap-6">
-                <span className="text-sm text-gray-500">Q3:</span>
+                <span className="text-sm text-gray-500">Q{previewData?.data?.length + 1}:</span>
                 <div className="flex flex-col md:flex-row gap-2 md:gap-0 items-center justify-between w-full">
                   <input
                     type="text"
-                    className="border p-1.5 pl-3 border-gray-300 placeholder:text-gray-500 bg-[#eff0f3] outline-0 md:w-full placeholder:text-sm rounded-tl-md rounded-bl-md"
+                    {...register("questionText", {
+                      required: "Question is required",
+                    })}
+                    className="border text-gray-500 p-1.5 pl-3 border-gray-300 placeholder:text-gray-500 bg-[#eff0f3] outline-0 md:w-full placeholder:text-sm rounded-tl-md rounded-bl-md"
                     placeholder="Enter Your Question"
                   />
+
                   <Select
                     onValueChange={(value) => {
                       setType(value);
@@ -111,13 +135,17 @@ const SurveyDetails = () => {
                     <SelectContent>
                       <SelectGroup className="bg-[#eff0f3] text-gray-500">
                         <SelectLabel>Choose Type</SelectLabel>
-                        <SelectItem value="comment">Comment Box</SelectItem>
+                        <SelectItem value="textarea">Comment Box</SelectItem>
                         <SelectItem value="mcq">MCQ</SelectItem>
                       </SelectGroup>
                     </SelectContent>
                   </Select>
                 </div>
               </div>
+              {errors.questionText && typeof errors.questionText.message === "string" && (
+                <p className="text-red-500 text-center py-2">{errors.questionText.message}</p>
+              )}
+
               {type === "mcq" && (
                 <div className="px-3 py-4 flex flex-col gap-4">
                   {answers.map((_, index) => (
@@ -131,17 +159,19 @@ const SurveyDetails = () => {
                           newAnswers[index] = e.target.value;
                           setAnswers(newAnswers);
                         }}
-                        className="bg-[#eff0f3] pl-3 p-1.5 rounded border border-gray-300 text-sm w-full outline-0"
+                        className="bg-[#eff0f3] text-gray-500 pl-3 p-1.5 rounded border border-gray-300 text-sm w-full outline-0"
                         placeholder="Enter an answer choice"
                       />
                       <div className="flex items-center gap-2">
                         <button
+                          type="button"
                           onClick={() => addAnswerAfter(index)}
                           className="rounded-full border border-[#eff0f3] h-[30px] w-[30px] flex items-center justify-center text-[#00B7C1] hover:bg-[#00B7C1] hover:text-white"
                         >
                           +
                         </button>
                         <button
+                          type="button"
                           onClick={() => removeAnswer(index)}
                           className="rounded-full border border-[#eff0f3] h-[30px] w-[30px] flex items-center justify-center text-[#00B7C1] hover:bg-[#00B7C1] hover:text-white"
                         >
@@ -159,9 +189,11 @@ const SurveyDetails = () => {
                 >
                   CANCEL
                 </Button>
-                <Button className=" w-[85px] text-white   cursor-pointer">SAVE</Button>
+                <Button type="submit" className=" w-[85px] text-white   cursor-pointer">
+                  SAVE
+                </Button>
               </div>
-            </>
+            </form>
           )}
         </div>
 
@@ -175,7 +207,7 @@ const SurveyDetails = () => {
             </Button>
           )}
           <Link
-            to="/dashboard/preview?surveyId=fdfdfdsf"
+            to={`/dashboard/preview?surveyId=${surveyId}`}
             className="bg-primary p-1.5  text-center rounded-md w-[150px] text-white cursor-pointer"
           >
             Preview Survey
