@@ -169,6 +169,16 @@ const router = createBrowserRouter([
         </Suspense>
       </AuthGuard>
     ),
+    children:[
+      {
+        index:true,
+        element: <Profile />,
+      },
+      {
+        path:"edit-profile",
+        element:<Profile />,
+      },
+    ],
   },
   {
     path: "fillingform",
