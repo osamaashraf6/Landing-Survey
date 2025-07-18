@@ -1,6 +1,5 @@
 import React from "react";
 import aboutTreadingActionImage from "@/assets/images/about/Ourmission.svg";
-import "./AboutTreadingAction.css";
 import Btn from "@/components/common/Btn";
 
 const AboutTreadingAction = () => {
