@@ -11,7 +11,7 @@ export default function Hero() {
 
                     {/* Left Content */}
                     <div className="col-span-3 text-center   md:text-start ">
-                        <div className="flex flex-col justify-center items-center md:items-start h-full space-y-4 text-black font-poppins ">
+                        <div className="flex flex-col justify-center items-center md:items-start h-full space-y-4   font-poppins ">
                             <h2 className="text-4xl leading-13 md:text-2xl lg:text-4xl font-semibold md:leading-10 lg:leading-13 font-poppins ">
                                 Turn <span className="text-primryBtn">Questions</span> into Clarity<br />
                                 and Transform <span className="text-primryBtn">Responses</span> into Valuable Insights
@@ -22,7 +22,7 @@ export default function Hero() {
                             <div className=' flex gap-3 '>
 
                                 <Btn text='Create Your Survey' />
-                                <Button className={`bg-white border-2 border-primryBtn text-xs md:text-lg w-30 lg:w-52 py-3 px-5 rounded-xl text-primryBtn font-bold leading-8 capitalize transition-all  hover:bg-primryBtn hover:text-white `} >See How It Works</Button>
+                                <Button className={`bg-white border-2 border-primryBtn text-xs md:text-[16px] w-30 lg:w-52 py-3 px-5 rounded-xl text-primryBtn font-medium leading-8 capitalize transition-all  hover:bg-primryBtn hover:text-white `} >See How It Works</Button>
                             </div>
                         </div>
 
