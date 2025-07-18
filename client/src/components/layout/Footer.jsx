@@ -3,7 +3,9 @@ import * as Icons from "../../assets/icons/Icons";
 const Footer = () => {
   return (
     <>
+ 
       <footer className="py-10  border-t border-gray-200">
+ 
         <div className="container">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-8 lg:space-y-0">
             <div>
