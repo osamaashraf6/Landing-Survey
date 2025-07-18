@@ -13,7 +13,7 @@ export default function CardCommon({ items }) {
             {items?.map((item, i) => (
                 <Card
                     key={i}
-                    className="w-[250px]  lg:w-[300px] lg:h-[470px] border-0 ms-5 [box-shadow:0_4px_16px_#00000814] py-6 flex-shrink-0 flex flex-col  justify-around "
+                    className="w-[250px]  lg:w-[300px] lg:h-[470px] border-0 ms-2 [box-shadow:0_4px_16px_#00000814] py-6 flex-shrink-0 flex flex-col  justify-around "
                 >
                     <CardHeader className="text-center">
                     {item.img && (
@@ -32,7 +32,7 @@ export default function CardCommon({ items }) {
                         <p>{item.content}</p>
                     </CardContent>
                     <CardFooter className="flex justify-center items-center">
-                        <Btn text={'Use Templet'} />
+                        <Btn text={'Use Template'} />
                     </CardFooter>
                 </Card>
             ))}

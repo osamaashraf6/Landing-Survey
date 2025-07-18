@@ -3,7 +3,7 @@ import PricingHeader from "@/components/Pricing/pricingHeader";
 import PricingCards from "../components/Pricing/PricingCards";
 
 const Pricing = () => {
-  return <section className="bg-[#f9f9fb]">
+  return <section className=" ">
     <div className="container">
     <PricingHeader />
     <PricingCards/>
