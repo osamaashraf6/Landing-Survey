@@ -1,20 +1,17 @@
 import * as Img from "@/assets/images/Images";
- 
-import * as Icons from '@/assets/icons/Icons';
- 
+
+import * as Icons from "@/assets/icons/Icons";
+
 import * as Icon from "@/assets/icons/Icons"; // ✅ Correct path to icon components
- 
 
 const cardData = [
   {
     title: "Create Your Survey",
-    content:
-      "Choose a template or start from scratch using our easy-to-use builder",
+    content: "Choose a template or start from scratch using our easy-to-use builder",
   },
   {
     title: "Share With Your Audience",
-    content:
-      "Send your survey via email, social media, or embed it in your website",
+    content: "Send your survey via email, social media, or embed it in your website",
   },
   {
     title: "Analyze Responses",
@@ -223,26 +220,15 @@ const plans = [
     description: "Create interactive forms that connect to your workflow",
     price: 25,
     subText: "What’s included",
-    features: [
-      "100 responses",
-      "1 user",
-      "Unlimited surveyland",
-      "unlimited questions",
-    ],
+    features: ["100 responses", "1 user", "Unlimited surveyland", "unlimited questions"],
     highlighted: false,
   },
   {
     title: "Plus",
-    description:
-      "Make your forms more beautiful and on-brand and more features",
+    description: "Make your forms more beautiful and on-brand and more features",
     price: 50,
     subText: "What’s included",
-    features: [
-      "1000 responses",
-      "3 user",
-      "Everything in Basic",
-      "Drop-off rates",
-    ],
+    features: ["1000 responses", "3 user", "Everything in Basic", "Drop-off rates"],
     highlighted: true,
   },
   {
@@ -250,56 +236,47 @@ const plans = [
     description: "Analyze performance and do more with your data",
     price: 83,
     subText: "What’s included",
-    features: [
-      "10,000 responses",
-      "5 user",
-      "Everything in Plus",
-      "Conversion tracking",
-    ],
+    features: ["10,000 responses", "5 user", "Everything in Plus", "Conversion tracking"],
     highlighted: false,
   },
 ];
 
- 
 const ProfileData = [
   {
-    icons : Icons.MdOutlineDashboard,
-    name : "Dashboard",
+    icons: Icons.MdOutlineDashboard,
+    name: "Dashboard",
   },
-   {
-    icons : Icons.CiUser,
-    name : "Edit Profile",
+  {
+    icons: Icons.CiUser,
+    name: "Edit Profile",
   },
-   {
-    icons : Icons.MdHistory ,
-    name : "Survey History",
+  {
+    icons: Icons.MdHistory,
+    name: "Survey History",
   },
-   {
-    icons : Icons.IoAnalyticsOutline,
-    name : "Saved History",
+  {
+    icons: Icons.IoAnalyticsOutline,
+    name: "Saved History",
   },
-   {
-    icons : Icons.IoIosNotificationsOutline,
-    name : "Notifications",
+  {
+    icons: Icons.IoIosNotificationsOutline,
+    name: "Notifications",
   },
-   {
-    icons : Icons.LuSettings2,
-    name : "Survey Preferences",
+  {
+    icons: Icons.LuSettings2,
+    name: "Survey Preferences",
   },
-   {
-    icons : Icons.CiSettings,
-    name : "Account Settings",
+  {
+    icons: Icons.CiSettings,
+    name: "Account Settings",
   },
-   {
-    icons : Icons.CiLogin,
-    name : "Log Out",
+  {
+    icons: Icons.CiLogin,
+    name: "Log Out",
   },
 ];
 
-
-
-export { cardData, cardDetails, plan, plans ,ProfileData  };
- 
+export { cardData, cardDetails, plan, plans, ProfileData };
 
 const items = [
   {
@@ -358,6 +335,4 @@ const formTypes = [
   "Abstract Forms",
 ];
 
-export { cardData, cardDetails, plan, plans, items, formTypes };
-
- 
+export { items, formTypes };
